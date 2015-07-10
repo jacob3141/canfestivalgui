@@ -1,11 +1,23 @@
 /****************************************************************************
-** Form implementation generated from reading ui file './maingui.ui'
-**
-** Created: Tue Jun 18 15:39:10 2002
-**      by:  The User Interface Compiler (uic)
-**
-** WARNING! All changes made in this file will be lost!
-****************************************************************************/
+   Copyright (C) 2002 by Raphael Zulliger
+   Copyright (C) 2015, Jacob Dawid <jacob@omg-it.works>
+
+   This program is free software; you can redistribute it and/or
+   modify it under the terms of the GNU General Public License
+   as published by the Free Software Foundation; either version 2
+   of the License, or (at your option) any later version.
+
+   This program is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+
+   You should have received a copy of the GNU General Public License along
+   with this program; if not, write to the Free Software Foundation, Inc.,
+   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+
+*****************************************************************************/
+
 #include "maingui.h"
 
 #include <qbuttongroup.h>
@@ -25,16 +37,12 @@
 #include <qwhatsthis.h>
 
 #include "ui_maingui.h"
-/*
- *  Constructs a MainGui which is a child of 'parent', with the
- *  name 'name' and widget flags set to 'f'
- */
+
+
 MainGui::MainGui(QWidget* parent,  const char* name, Qt::WindowFlags fl )
     : QWidget( parent),
-      ui(new Ui::MainGui)
-{
+      ui(new Ui::MainGui) {
     ui->setupUi(this);
-    if ( !name )
 
     // signals and slots connections
     connect( ui->canPort, SIGNAL( valueChanged(int) ), this, SLOT( portChanged( ) ) );
@@ -193,11 +201,6 @@ void MainGui::clearCanReceiveLog( )
 void MainGui::initModule( )
 {
     qWarning( "MainGui::initModule( ): Not implemented yet!" );
-}
-
-void MainGui::new_slot()
-{
-    qWarning( "MainGui::new_slot(): Not implemented yet!" );
 }
 
 void MainGui::portChanged( )
