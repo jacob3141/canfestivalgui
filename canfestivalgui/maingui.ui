@@ -1,2537 +1,1829 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ui version="4.0" stdsetdef="1">
-  <author></author>
-  <comment></comment>
-  <exportmacro></exportmacro>
-  <class>MainGui</class>
-  <widget class="QWidget" name="form1">
-    <property name="geometry">
-      <rect>
-        <x>0</x>
-        <y>0</y>
-        <width>996</width>
-        <height>689</height>
-      </rect>
-    </property>
-    <property name="windowTitle">
-      <string>CANFestival Gui</string>
-    </property>
-    <widget class="Q3GroupBox" name="GroupBox1">
-      <property name="geometry">
-        <rect>
-          <x>10</x>
-          <y>0</y>
-          <width>620</width>
-          <height>100</height>
-        </rect>
-      </property>
-      <property name="title">
-        <string>Hardware</string>
-      </property>
-      <widget class="QLabel" name="canPortLabel">
-        <property name="geometry">
-          <rect>
-            <x>260</x>
-            <y>45</y>
-            <width>108</width>
-            <height>17</height>
-          </rect>
-        </property>
-        <property name="text">
-          <string>CAN Port to use:</string>
-        </property>
-        <property name="wordWrap">
-          <bool>false</bool>
-        </property>
-      </widget>
-      <widget class="QSpinBox" name="canPort">
-        <property name="geometry">
-          <rect>
-            <x>380</x>
-            <y>40</y>
-            <width>58</width>
-            <height>25</height>
-          </rect>
-        </property>
-        <property name="maximum">
-          <number>1</number>
-        </property>
-        <property name="value">
-          <number>1</number>
-        </property>
-        <property name="toolTip">
-          <string>Choose the CAN port you want</string>
-        </property>
-      </widget>
-      <widget class="Q3ButtonGroup" name="ButtonGroup4">
-        <property name="geometry">
-          <rect>
-            <x>10</x>
-            <y>30</y>
-            <width>180</width>
-            <height>50</height>
-          </rect>
-        </property>
-        <property name="title">
-          <string>Only Simulation</string>
-        </property>
-        <widget class="QRadioButton" name="SimulationNoRadioButton">
-          <property name="geometry">
-            <rect>
-              <x>90</x>
-              <y>20</y>
-              <width>42</width>
-              <height>21</height>
-            </rect>
-          </property>
-          <property name="text">
-            <string>&amp;No</string>
-          </property>
-          <property name="checked">
-            <bool>true</bool>
-          </property>
-        </widget>
-        <widget class="QRadioButton" name="SimulationYesRadioButton">
-          <property name="geometry">
-            <rect>
-              <x>20</x>
-              <y>20</y>
-              <width>49</width>
-              <height>21</height>
-            </rect>
-          </property>
-          <property name="text">
-            <string>&amp;Yes</string>
-          </property>
-          <property name="checked">
-            <bool>false</bool>
-          </property>
-        </widget>
-      </widget>
-      <widget class="QPushButton" name="initModuleButton">
-        <property name="geometry">
-          <rect>
-            <x>451</x>
-            <y>40</y>
-            <width>150</width>
-            <height>21</height>
-          </rect>
-        </property>
-        <property name="text">
-          <string>&amp;Initialize CANPort</string>
-        </property>
-        <property name="toolTip">
-          <string>Load/Unload the driver module</string>
-        </property>
-      </widget>
+<ui version="4.0">
+ <class>MainGui</class>
+ <widget class="QWidget" name="MainGui">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>769</width>
+    <height>822</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>CANFestival Gui</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_9">
+   <item>
+    <widget class="QGroupBox" name="groupBox">
+     <property name="title">
+      <string>Hardware</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_5">
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_3">
+          <item>
+           <widget class="QRadioButton" name="SimulationYesRadioButton">
+            <property name="text">
+             <string>&amp;Yes</string>
+            </property>
+            <property name="checked">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="SimulationNoRadioButton">
+            <property name="text">
+             <string>&amp;No</string>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_4">
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_4">
+            <item>
+             <widget class="QLabel" name="canPortLabel">
+              <property name="text">
+               <string>CAN Port to use:</string>
+              </property>
+              <property name="wordWrap">
+               <bool>false</bool>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QSpinBox" name="canPort">
+              <property name="toolTip">
+               <string>Choose the CAN port you want</string>
+              </property>
+              <property name="maximum">
+               <number>1</number>
+              </property>
+              <property name="value">
+               <number>1</number>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <widget class="QPushButton" name="initModuleButton">
+            <property name="toolTip">
+             <string>Load/Unload the driver module</string>
+            </property>
+            <property name="text">
+             <string>&amp;Initialize CANPort</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+     </layout>
     </widget>
-    <widget class="Q3GroupBox" name="datalog">
-      <property name="geometry">
-        <rect>
-          <x>640</x>
-          <y>0</y>
-          <width>370</width>
-          <height>440</height>
-        </rect>
-      </property>
-      <property name="title">
-        <string>Data logger</string>
-      </property>
-      <widget class="QPushButton" name="clearCANopenLogButton">
-        <property name="geometry">
-          <rect>
-            <x>10</x>
-            <y>410</y>
-            <width>340</width>
-            <height>21</height>
-          </rect>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupBox_2">
+     <property name="title">
+      <string>Send Messages</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_6">
+      <item>
+       <widget class="QTabWidget" name="TabWidget4">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>0</height>
+         </size>
         </property>
-        <property name="text">
-          <string>Clear Can send messages</string>
-        </property>
-      </widget>
-      <widget class="Q3GroupBox" name="canMessageLogBox">
-        <property name="geometry">
-          <rect>
-            <x>10</x>
-            <y>20</y>
-            <width>350</width>
-            <height>380</height>
-          </rect>
-        </property>
-        <property name="title">
-          <string>All CAN SENT Messages (including CANopen)</string>
-        </property>
-        <widget class="Q3TextView" name="canLogView">
-          <property name="geometry">
-            <rect>
-              <x>10</x>
-              <y>20</y>
-              <width>330</width>
-              <height>350</height>
-            </rect>
-          </property>
-          <property name="dragAutoScroll">
-            <bool>true</bool>
-          </property>
-        </widget>
-      </widget>
-    </widget>
-    <widget class="Q3GroupBox" name="GroupBox11">
-      <property name="geometry">
-        <rect>
-          <x>10</x>
-          <y>450</y>
-          <width>1000</width>
-          <height>210</height>
-        </rect>
-      </property>
-      <property name="title">
-        <string>CAN Bus receive Log</string>
-      </property>
-      <widget class="QPushButton" name="PushButton65">
-        <property name="geometry">
-          <rect>
-            <x>930</x>
-            <y>20</y>
-            <width>50</width>
-            <height>171</height>
-          </rect>
-        </property>
-        <property name="text">
-          <string>C&amp;lear</string>
-        </property>
-      </widget>
-      <widget class="Q3TextView" name="canReceiveLog">
-        <property name="geometry">
-          <rect>
-            <x>10</x>
-            <y>20</y>
-            <width>910</width>
-            <height>170</height>
-          </rect>
-        </property>
-      </widget>
-    </widget>
-    <widget class="Q3GroupBox" name="sendMessagesBox">
-      <property name="geometry">
-        <rect>
-          <x>10</x>
-          <y>110</y>
-          <width>620</width>
-          <height>330</height>
-        </rect>
-      </property>
-      <property name="title">
-        <string>Send Messages</string>
-      </property>
-      <widget class="QTabWidget" name="TabWidget4">
-        <property name="geometry">
-          <rect>
-            <x>10</x>
-            <y>40</y>
-            <width>600</width>
-            <height>280</height>
-          </rect>
+        <property name="currentIndex">
+         <number>0</number>
         </property>
         <widget class="QWidget" name="tab">
-          <attribute name="title">
-            <string>&amp;CAN Message</string>
-          </attribute>
-          <widget class="QLabel" name="TextLabel2_2">
-            <property name="geometry">
-              <rect>
-                <x>10</x>
-                <y>30</y>
-                <width>90</width>
-                <height>17</height>
-              </rect>
-            </property>
-            <property name="text">
-              <string>CAN Identifier</string>
-            </property>
-            <property name="wordWrap">
-              <bool>false</bool>
-            </property>
-          </widget>
-          <widget class="QLabel" name="TextLabel3_2">
-            <property name="geometry">
-              <rect>
-                <x>130</x>
-                <y>30</y>
-                <width>65</width>
-                <height>17</height>
-              </rect>
-            </property>
-            <property name="text">
-              <string>CAN Data</string>
-            </property>
-            <property name="wordWrap">
-              <bool>false</bool>
-            </property>
-          </widget>
-          <widget class="QLineEdit" name="canData0">
-            <property name="geometry">
-              <rect>
-                <x>130</x>
-                <y>50</y>
-                <width>80</width>
-                <height>22</height>
-              </rect>
-            </property>
-            <property name="text">
-              <string>0x0</string>
-            </property>
-            <property name="maxLength">
-              <number>8</number>
-            </property>
-            <property name="alignment">
-              <set>Qt::AlignRight</set>
-            </property>
-          </widget>
-          <widget class="QLineEdit" name="canData1">
-            <property name="geometry">
-              <rect>
-                <x>220</x>
-                <y>50</y>
-                <width>80</width>
-                <height>22</height>
-              </rect>
-            </property>
-            <property name="text">
-              <string>0x0</string>
-            </property>
-            <property name="maxLength">
-              <number>8</number>
-            </property>
-            <property name="alignment">
-              <set>Qt::AlignRight</set>
-            </property>
-          </widget>
-          <widget class="QLineEdit" name="canData2">
-            <property name="geometry">
-              <rect>
-                <x>310</x>
-                <y>50</y>
-                <width>80</width>
-                <height>22</height>
-              </rect>
-            </property>
-            <property name="text">
-              <string>0x0</string>
-            </property>
-            <property name="maxLength">
-              <number>8</number>
-            </property>
-            <property name="alignment">
-              <set>Qt::AlignRight</set>
-            </property>
-          </widget>
-          <widget class="QLineEdit" name="canData3">
-            <property name="geometry">
-              <rect>
-                <x>400</x>
-                <y>50</y>
-                <width>80</width>
-                <height>22</height>
-              </rect>
-            </property>
-            <property name="text">
-              <string>0x0</string>
-            </property>
-            <property name="maxLength">
-              <number>8</number>
-            </property>
-            <property name="alignment">
-              <set>Qt::AlignRight</set>
-            </property>
-          </widget>
-          <widget class="QLineEdit" name="canData7">
-            <property name="geometry">
-              <rect>
-                <x>400</x>
-                <y>80</y>
-                <width>80</width>
-                <height>22</height>
-              </rect>
-            </property>
-            <property name="text">
-              <string>0x0</string>
-            </property>
-            <property name="maxLength">
-              <number>8</number>
-            </property>
-            <property name="alignment">
-              <set>Qt::AlignRight</set>
-            </property>
-          </widget>
-          <widget class="QLineEdit" name="canData6">
-            <property name="geometry">
-              <rect>
-                <x>310</x>
-                <y>80</y>
-                <width>80</width>
-                <height>22</height>
-              </rect>
-            </property>
-            <property name="text">
-              <string>0x0</string>
-            </property>
-            <property name="maxLength">
-              <number>8</number>
-            </property>
-            <property name="alignment">
-              <set>Qt::AlignRight</set>
-            </property>
-          </widget>
-          <widget class="QLineEdit" name="canData5">
-            <property name="geometry">
-              <rect>
-                <x>220</x>
-                <y>80</y>
-                <width>80</width>
-                <height>22</height>
-              </rect>
-            </property>
-            <property name="text">
-              <string>0x0</string>
-            </property>
-            <property name="maxLength">
-              <number>8</number>
-            </property>
-            <property name="alignment">
-              <set>Qt::AlignRight</set>
-            </property>
-          </widget>
-          <widget class="QLineEdit" name="canData4">
-            <property name="geometry">
-              <rect>
-                <x>130</x>
-                <y>80</y>
-                <width>80</width>
-                <height>22</height>
-              </rect>
-            </property>
-            <property name="text">
-              <string>0x0</string>
-            </property>
-            <property name="maxLength">
-              <number>8</number>
-            </property>
-            <property name="alignment">
-              <set>Qt::AlignRight</set>
-            </property>
-          </widget>
-          <widget class="QLineEdit" name="canIdentifier">
-            <property name="geometry">
-              <rect>
-                <x>10</x>
-                <y>50</y>
-                <width>100</width>
-                <height>22</height>
-              </rect>
-            </property>
-            <property name="text">
-              <string>0x0</string>
-            </property>
-            <property name="maxLength">
-              <number>11</number>
-            </property>
-            <property name="alignment">
-              <set>Qt::AlignRight</set>
-            </property>
-          </widget>
-          <widget class="QPushButton" name="sendCanButton">
-            <property name="geometry">
-              <rect>
-                <x>10</x>
-                <y>210</y>
-                <width>120</width>
-                <height>30</height>
-              </rect>
-            </property>
-            <property name="text">
-              <string>&amp;Send CAN</string>
-            </property>
-          </widget>
-          <widget class="Q3ButtonGroup" name="canMessageDataType">
-            <property name="geometry">
-              <rect>
-                <x>500</x>
-                <y>20</y>
-                <width>90</width>
-                <height>90</height>
-              </rect>
-            </property>
-            <property name="title">
-              <string>Data Typ</string>
-            </property>
-            <widget class="QRadioButton" name="canHexFormat">
-              <property name="geometry">
-                <rect>
-                  <x>10</x>
-                  <y>20</y>
-                  <width>49</width>
-                  <height>21</height>
-                </rect>
-              </property>
+         <attribute name="title">
+          <string>&amp;CAN Message</string>
+         </attribute>
+         <layout class="QVBoxLayout" name="verticalLayout_2">
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout">
+            <item>
+             <layout class="QGridLayout" name="gridLayout">
+              <item row="0" column="0">
+               <widget class="QLabel" name="TextLabel2_2">
+                <property name="text">
+                 <string>CAN Identifier</string>
+                </property>
+                <property name="wordWrap">
+                 <bool>false</bool>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="1">
+               <widget class="QLabel" name="TextLabel3_2">
+                <property name="text">
+                 <string>CAN Data</string>
+                </property>
+                <property name="wordWrap">
+                 <bool>false</bool>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="0">
+               <widget class="QLineEdit" name="canIdentifier">
+                <property name="text">
+                 <string>0x0</string>
+                </property>
+                <property name="maxLength">
+                 <number>11</number>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignRight</set>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="1">
+               <widget class="QLineEdit" name="canData0">
+                <property name="text">
+                 <string>0x0</string>
+                </property>
+                <property name="maxLength">
+                 <number>8</number>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignRight</set>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="2">
+               <widget class="QLineEdit" name="canData1">
+                <property name="text">
+                 <string>0x0</string>
+                </property>
+                <property name="maxLength">
+                 <number>8</number>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignRight</set>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="3">
+               <widget class="QLineEdit" name="canData2">
+                <property name="text">
+                 <string>0x0</string>
+                </property>
+                <property name="maxLength">
+                 <number>8</number>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignRight</set>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="4">
+               <widget class="QLineEdit" name="canData3">
+                <property name="text">
+                 <string>0x0</string>
+                </property>
+                <property name="maxLength">
+                 <number>8</number>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignRight</set>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="1">
+               <widget class="QLineEdit" name="canData4">
+                <property name="text">
+                 <string>0x0</string>
+                </property>
+                <property name="maxLength">
+                 <number>8</number>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignRight</set>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="2">
+               <widget class="QLineEdit" name="canData5">
+                <property name="text">
+                 <string>0x0</string>
+                </property>
+                <property name="maxLength">
+                 <number>8</number>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignRight</set>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="3">
+               <widget class="QLineEdit" name="canData6">
+                <property name="text">
+                 <string>0x0</string>
+                </property>
+                <property name="maxLength">
+                 <number>8</number>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignRight</set>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="4">
+               <widget class="QLineEdit" name="canData7">
+                <property name="text">
+                 <string>0x0</string>
+                </property>
+                <property name="maxLength">
+                 <number>8</number>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignRight</set>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout">
+              <item>
+               <widget class="QRadioButton" name="canHexFormat">
+                <property name="text">
+                 <string>Hex</string>
+                </property>
+                <property name="checked">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QRadioButton" name="canBinFormat">
+                <property name="text">
+                 <string>Bin</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QRadioButton" name="canDecFormat">
+                <property name="text">
+                 <string>Dec</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QGridLayout" name="gridLayout_2">
+            <item row="1" column="0">
+             <widget class="QCheckBox" name="canCountOfByteActiv">
               <property name="text">
-                <string>Hex</string>
+               <string>Send Count of Bytes:</string>
               </property>
-              <property name="checked">
-                <bool>true</bool>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QSpinBox" name="canCountOfByte">
+              <property name="enabled">
+               <bool>true</bool>
               </property>
-            </widget>
-            <widget class="QRadioButton" name="canBinFormat">
-              <property name="geometry">
-                <rect>
-                  <x>10</x>
-                  <y>40</y>
-                  <width>44</width>
-                  <height>21</height>
-                </rect>
+              <property name="minimum">
+               <number>1</number>
               </property>
+              <property name="maximum">
+               <number>8</number>
+              </property>
+              <property name="value">
+               <number>8</number>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="0">
+             <widget class="QCheckBox" name="canRTR">
               <property name="text">
-                <string>Bin</string>
+               <string>RTR (Checked: 1)</string>
               </property>
-            </widget>
-            <widget class="QRadioButton" name="canDecFormat">
-              <property name="geometry">
-                <rect>
-                  <x>10</x>
-                  <y>60</y>
-                  <width>50</width>
-                  <height>21</height>
-                </rect>
+             </widget>
+            </item>
+            <item row="1" column="2">
+             <spacer name="horizontalSpacer_3">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
               </property>
-              <property name="text">
-                <string>Dec</string>
-              </property>
-            </widget>
-          </widget>
-          <widget class="QCheckBox" name="canRTR">
-            <property name="geometry">
-              <rect>
-                <x>10</x>
-                <y>120</y>
-                <width>143</width>
-                <height>26</height>
-              </rect>
-            </property>
-            <property name="text">
-              <string>RTR (Checked: 1)</string>
-            </property>
-          </widget>
-          <widget class="QCheckBox" name="canCountOfByteActiv">
-            <property name="geometry">
-              <rect>
-                <x>10</x>
-                <y>160</y>
-                <width>141</width>
-                <height>19</height>
-              </rect>
-            </property>
-            <property name="text">
-              <string>Send Count of Bytes:</string>
-            </property>
-          </widget>
-          <widget class="QSpinBox" name="canCountOfByte">
-            <property name="enabled">
-              <bool>true</bool>
-            </property>
-            <property name="geometry">
-              <rect>
-                <x>170</x>
-                <y>157</y>
-                <width>56</width>
-                <height>23</height>
-              </rect>
-            </property>
-            <property name="maximum">
-              <number>8</number>
-            </property>
-            <property name="minimum">
-              <number>1</number>
-            </property>
-            <property name="value">
-              <number>8</number>
-            </property>
-          </widget>
-          <widget class="QPushButton" name="readCanButton">
-            <property name="geometry">
-              <rect>
-                <x>160</x>
-                <y>210</y>
-                <width>121</width>
-                <height>31</height>
-              </rect>
-            </property>
-            <property name="text">
-              <string>&amp;Read CAN</string>
-            </property>
-          </widget>
-        </widget>
-        <widget class="QWidget" name="tab">
-          <attribute name="title">
-            <string>&amp;PDO</string>
-          </attribute>
-          <widget class="QCheckBox" name="canopenPDOWFlag">
-            <property name="geometry">
-              <rect>
-                <x>250</x>
-                <y>10</y>
-                <width>250</width>
-                <height>26</height>
-              </rect>
-            </property>
-            <property name="text">
-              <string>Listen w message before send</string>
-            </property>
-          </widget>
-          <widget class="QCheckBox" name="canopenPDOReadWrite">
-            <property name="geometry">
-              <rect>
-                <x>250</x>
-                <y>40</y>
-                <width>147</width>
-                <height>26</height>
-              </rect>
-            </property>
-            <property name="text">
-              <string>Read (activ)/Write</string>
-            </property>
-          </widget>
-          <widget class="QLabel" name="canopenDeviceIdLabel_3">
-            <property name="geometry">
-              <rect>
-                <x>20</x>
-                <y>20</y>
-                <width>131</width>
-                <height>17</height>
-              </rect>
-            </property>
-            <property name="text">
-              <string>CANopen Device ID</string>
-            </property>
-            <property name="wordWrap">
-              <bool>false</bool>
-            </property>
-          </widget>
-          <widget class="QSpinBox" name="canopenPDODeviceId">
-            <property name="geometry">
-              <rect>
-                <x>160</x>
-                <y>16</y>
-                <width>58</width>
-                <height>25</height>
-              </rect>
-            </property>
-            <property name="maximum">
-              <number>127</number>
-            </property>
-            <property name="value">
-              <number>1</number>
-            </property>
-          </widget>
-          <widget class="QLabel" name="canopenDataLabel_3">
-            <property name="geometry">
-              <rect>
-                <x>20</x>
-                <y>90</y>
-                <width>97</width>
-                <height>17</height>
-              </rect>
-            </property>
-            <property name="text">
-              <string>CANopen Data</string>
-            </property>
-            <property name="wordWrap">
-              <bool>false</bool>
-            </property>
-          </widget>
-          <widget class="QLineEdit" name="canopenPDOData0">
-            <property name="geometry">
-              <rect>
-                <x>60</x>
-                <y>120</y>
-                <width>80</width>
-                <height>22</height>
-              </rect>
-            </property>
-            <property name="text">
-              <string>0x0</string>
-            </property>
-            <property name="maxLength">
-              <number>8</number>
-            </property>
-            <property name="alignment">
-              <set>Qt::AlignRight</set>
-            </property>
-          </widget>
-          <widget class="QLineEdit" name="canopenPDOData1">
-            <property name="geometry">
-              <rect>
-                <x>150</x>
-                <y>120</y>
-                <width>80</width>
-                <height>22</height>
-              </rect>
-            </property>
-            <property name="text">
-              <string>0x0</string>
-            </property>
-            <property name="maxLength">
-              <number>8</number>
-            </property>
-            <property name="alignment">
-              <set>Qt::AlignRight</set>
-            </property>
-          </widget>
-          <widget class="QLineEdit" name="canopenPDOData2">
-            <property name="geometry">
-              <rect>
-                <x>240</x>
-                <y>120</y>
-                <width>80</width>
-                <height>22</height>
-              </rect>
-            </property>
-            <property name="text">
-              <string>0x0</string>
-            </property>
-            <property name="maxLength">
-              <number>8</number>
-            </property>
-            <property name="alignment">
-              <set>Qt::AlignRight</set>
-            </property>
-          </widget>
-          <widget class="QLineEdit" name="canopenPDOData3">
-            <property name="geometry">
-              <rect>
-                <x>330</x>
-                <y>120</y>
-                <width>80</width>
-                <height>22</height>
-              </rect>
-            </property>
-            <property name="text">
-              <string>0x0</string>
-            </property>
-            <property name="maxLength">
-              <number>8</number>
-            </property>
-            <property name="alignment">
-              <set>Qt::AlignRight</set>
-            </property>
-          </widget>
-          <widget class="QLineEdit" name="canopenPDOData7">
-            <property name="geometry">
-              <rect>
-                <x>330</x>
-                <y>150</y>
-                <width>80</width>
-                <height>22</height>
-              </rect>
-            </property>
-            <property name="text">
-              <string>0x0</string>
-            </property>
-            <property name="maxLength">
-              <number>8</number>
-            </property>
-            <property name="alignment">
-              <set>Qt::AlignRight</set>
-            </property>
-          </widget>
-          <widget class="QLineEdit" name="canopenPDOData6">
-            <property name="geometry">
-              <rect>
-                <x>240</x>
-                <y>150</y>
-                <width>80</width>
-                <height>22</height>
-              </rect>
-            </property>
-            <property name="text">
-              <string>0x0</string>
-            </property>
-            <property name="maxLength">
-              <number>8</number>
-            </property>
-            <property name="alignment">
-              <set>Qt::AlignRight</set>
-            </property>
-          </widget>
-          <widget class="QLineEdit" name="canopenPDOData5">
-            <property name="geometry">
-              <rect>
-                <x>150</x>
-                <y>150</y>
-                <width>80</width>
-                <height>22</height>
-              </rect>
-            </property>
-            <property name="text">
-              <string>0x0</string>
-            </property>
-            <property name="maxLength">
-              <number>8</number>
-            </property>
-            <property name="alignment">
-              <set>Qt::AlignRight</set>
-            </property>
-          </widget>
-          <widget class="QLineEdit" name="canopenPDOData4">
-            <property name="geometry">
-              <rect>
-                <x>60</x>
-                <y>150</y>
-                <width>80</width>
-                <height>22</height>
-              </rect>
-            </property>
-            <property name="text">
-              <string>0x0</string>
-            </property>
-            <property name="maxLength">
-              <number>8</number>
-            </property>
-            <property name="alignment">
-              <set>Qt::AlignRight</set>
-            </property>
-          </widget>
-          <widget class="Q3ButtonGroup" name="canopenPDODatatypeGroup">
-            <property name="geometry">
-              <rect>
-                <x>480</x>
-                <y>100</y>
-                <width>80</width>
-                <height>90</height>
-              </rect>
-            </property>
-            <property name="title">
-              <string>Data Typ</string>
-            </property>
-            <widget class="QRadioButton" name="canopenPDOHexFormat">
-              <property name="geometry">
-                <rect>
-                  <x>10</x>
-                  <y>20</y>
-                  <width>49</width>
-                  <height>21</height>
-                </rect>
-              </property>
-              <property name="text">
-                <string>Hex</string>
-              </property>
-              <property name="checked">
-                <bool>true</bool>
-              </property>
-            </widget>
-            <widget class="QRadioButton" name="canopenPDOBinFormat">
-              <property name="geometry">
-                <rect>
-                  <x>10</x>
-                  <y>40</y>
-                  <width>44</width>
-                  <height>21</height>
-                </rect>
-              </property>
-              <property name="text">
-                <string>Bin</string>
-              </property>
-            </widget>
-            <widget class="QRadioButton" name="canopenPDODecFormat">
-              <property name="geometry">
-                <rect>
-                  <x>10</x>
-                  <y>60</y>
-                  <width>50</width>
-                  <height>21</height>
-                </rect>
-              </property>
-              <property name="text">
-                <string>Dec</string>
-              </property>
-            </widget>
-          </widget>
-          <widget class="QPushButton" name="sendPDOButton">
-            <property name="geometry">
-              <rect>
-                <x>10</x>
-                <y>210</y>
-                <width>120</width>
-                <height>29</height>
-              </rect>
-            </property>
-            <property name="text">
-              <string>&amp;Send PDO</string>
-            </property>
-          </widget>
-        </widget>
-        <widget class="QWidget" name="tab">
-          <attribute name="title">
-            <string>S&amp;DO</string>
-          </attribute>
-          <widget class="QSpinBox" name="canopenSDODeviceId">
-            <property name="geometry">
-              <rect>
-                <x>160</x>
-                <y>16</y>
-                <width>58</width>
-                <height>25</height>
-              </rect>
-            </property>
-            <property name="maximum">
-              <number>127</number>
-            </property>
-            <property name="value">
-              <number>1</number>
-            </property>
-          </widget>
-          <widget class="QLabel" name="canopenDeviceIdLabel_3_3">
-            <property name="geometry">
-              <rect>
-                <x>20</x>
-                <y>20</y>
-                <width>131</width>
-                <height>17</height>
-              </rect>
-            </property>
-            <property name="text">
-              <string>CANopen Device ID</string>
-            </property>
-            <property name="wordWrap">
-              <bool>false</bool>
-            </property>
-          </widget>
-          <widget class="QLabel" name="canopenDataLabel_3_2">
-            <property name="geometry">
-              <rect>
-                <x>20</x>
-                <y>120</y>
-                <width>97</width>
-                <height>17</height>
-              </rect>
-            </property>
-            <property name="text">
-              <string>CANopen Data</string>
-            </property>
-            <property name="wordWrap">
-              <bool>false</bool>
-            </property>
-          </widget>
-          <widget class="QLabel" name="TextLabel1">
-            <property name="geometry">
-              <rect>
-                <x>20</x>
-                <y>80</y>
-                <width>123</width>
-                <height>17</height>
-              </rect>
-            </property>
-            <property name="text">
-              <string>Command Specifier</string>
-            </property>
-            <property name="wordWrap">
-              <bool>false</bool>
-            </property>
-          </widget>
-          <widget class="QLineEdit" name="canopenSDOData4">
-            <property name="geometry">
-              <rect>
-                <x>400</x>
-                <y>120</y>
-                <width>80</width>
-                <height>22</height>
-              </rect>
-            </property>
-            <property name="text">
-              <string>0x0</string>
-            </property>
-            <property name="maxLength">
-              <number>8</number>
-            </property>
-            <property name="alignment">
-              <set>Qt::AlignRight</set>
-            </property>
-          </widget>
-          <widget class="QLineEdit" name="canopenSDOData7">
-            <property name="geometry">
-              <rect>
-                <x>310</x>
-                <y>150</y>
-                <width>80</width>
-                <height>22</height>
-              </rect>
-            </property>
-            <property name="text">
-              <string>0x0</string>
-            </property>
-            <property name="maxLength">
-              <number>8</number>
-            </property>
-            <property name="alignment">
-              <set>Qt::AlignRight</set>
-            </property>
-          </widget>
-          <widget class="QLineEdit" name="canopenSDOData6">
-            <property name="geometry">
-              <rect>
-                <x>220</x>
-                <y>150</y>
-                <width>80</width>
-                <height>22</height>
-              </rect>
-            </property>
-            <property name="text">
-              <string>0x0</string>
-            </property>
-            <property name="maxLength">
-              <number>8</number>
-            </property>
-            <property name="alignment">
-              <set>Qt::AlignRight</set>
-            </property>
-          </widget>
-          <widget class="QLineEdit" name="canopenSDOData5">
-            <property name="geometry">
-              <rect>
-                <x>130</x>
-                <y>150</y>
-                <width>80</width>
-                <height>22</height>
-              </rect>
-            </property>
-            <property name="text">
-              <string>0x0</string>
-            </property>
-            <property name="maxLength">
-              <number>8</number>
-            </property>
-            <property name="alignment">
-              <set>Qt::AlignRight</set>
-            </property>
-          </widget>
-          <widget class="QLineEdit" name="canopenSDOData3">
-            <property name="geometry">
-              <rect>
-                <x>310</x>
-                <y>120</y>
-                <width>80</width>
-                <height>22</height>
-              </rect>
-            </property>
-            <property name="text">
-              <string>0x0</string>
-            </property>
-            <property name="maxLength">
-              <number>8</number>
-            </property>
-            <property name="alignment">
-              <set>Qt::AlignRight</set>
-            </property>
-          </widget>
-          <widget class="QLineEdit" name="canopenSDOData2">
-            <property name="geometry">
-              <rect>
-                <x>220</x>
-                <y>120</y>
-                <width>80</width>
-                <height>22</height>
-              </rect>
-            </property>
-            <property name="text">
-              <string>0x0</string>
-            </property>
-            <property name="maxLength">
-              <number>8</number>
-            </property>
-            <property name="alignment">
-              <set>Qt::AlignRight</set>
-            </property>
-          </widget>
-          <widget class="QLineEdit" name="canopenSDOData1">
-            <property name="geometry">
-              <rect>
-                <x>130</x>
-                <y>120</y>
-                <width>80</width>
-                <height>22</height>
-              </rect>
-            </property>
-            <property name="text">
-              <string>0x0</string>
-            </property>
-            <property name="maxLength">
-              <number>8</number>
-            </property>
-            <property name="alignment">
-              <set>Qt::AlignRight</set>
-            </property>
-          </widget>
-          <widget class="QComboBox" name="canopenSDOCommandSpecifier">
-            <property name="geometry">
-              <rect>
-                <x>160</x>
-                <y>80</y>
-                <width>260</width>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
                 <height>20</height>
-              </rect>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <spacer name="verticalSpacer_4">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
             </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_2">
             <item>
+             <spacer name="horizontalSpacer_4">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QPushButton" name="sendCanButton">
               <property name="text">
+               <string>&amp;Send CAN</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="readCanButton">
+              <property name="text">
+               <string>&amp;Read CAN</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="tab_2">
+         <attribute name="title">
+          <string>&amp;PDO</string>
+         </attribute>
+         <layout class="QVBoxLayout" name="verticalLayout_11">
+          <item>
+           <layout class="QGridLayout" name="gridLayout_4">
+            <item row="0" column="0">
+             <widget class="QLabel" name="canopenDeviceIdLabel_3">
+              <property name="text">
+               <string>CANopen Device ID</string>
+              </property>
+              <property name="wordWrap">
+               <bool>false</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QSpinBox" name="canopenPDODeviceId">
+              <property name="maximum">
+               <number>127</number>
+              </property>
+              <property name="value">
+               <number>1</number>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="2">
+             <widget class="QCheckBox" name="canopenPDOWFlag">
+              <property name="text">
+               <string>Listen w message before send</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="2">
+             <widget class="QCheckBox" name="canopenPDOReadWrite">
+              <property name="text">
+               <string>Read (activ)/Write</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_7">
+            <item>
+             <layout class="QGridLayout" name="gridLayout_3">
+              <item row="0" column="0" colspan="2">
+               <widget class="QLabel" name="canopenDataLabel_3">
+                <property name="text">
+                 <string>CANopen Data</string>
+                </property>
+                <property name="wordWrap">
+                 <bool>false</bool>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="0">
+               <widget class="QLineEdit" name="canopenPDOData0">
+                <property name="text">
+                 <string>0x0</string>
+                </property>
+                <property name="maxLength">
+                 <number>8</number>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignRight</set>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="1">
+               <widget class="QLineEdit" name="canopenPDOData1">
+                <property name="text">
+                 <string>0x0</string>
+                </property>
+                <property name="maxLength">
+                 <number>8</number>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignRight</set>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="2">
+               <widget class="QLineEdit" name="canopenPDOData2">
+                <property name="text">
+                 <string>0x0</string>
+                </property>
+                <property name="maxLength">
+                 <number>8</number>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignRight</set>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="3">
+               <widget class="QLineEdit" name="canopenPDOData3">
+                <property name="text">
+                 <string>0x0</string>
+                </property>
+                <property name="maxLength">
+                 <number>8</number>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignRight</set>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="0">
+               <widget class="QLineEdit" name="canopenPDOData4">
+                <property name="text">
+                 <string>0x0</string>
+                </property>
+                <property name="maxLength">
+                 <number>8</number>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignRight</set>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="1">
+               <widget class="QLineEdit" name="canopenPDOData5">
+                <property name="text">
+                 <string>0x0</string>
+                </property>
+                <property name="maxLength">
+                 <number>8</number>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignRight</set>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="2">
+               <widget class="QLineEdit" name="canopenPDOData6">
+                <property name="text">
+                 <string>0x0</string>
+                </property>
+                <property name="maxLength">
+                 <number>8</number>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignRight</set>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="3">
+               <widget class="QLineEdit" name="canopenPDOData7">
+                <property name="text">
+                 <string>0x0</string>
+                </property>
+                <property name="maxLength">
+                 <number>8</number>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignRight</set>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_10">
+              <item>
+               <widget class="QRadioButton" name="canopenPDOHexFormat">
+                <property name="text">
+                 <string>Hex</string>
+                </property>
+                <property name="checked">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QRadioButton" name="canopenPDOBinFormat">
+                <property name="text">
+                 <string>Bin</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QRadioButton" name="canopenPDODecFormat">
+                <property name="text">
+                 <string>Dec</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <spacer name="verticalSpacer_5">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_8">
+            <item>
+             <spacer name="horizontalSpacer_5">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QPushButton" name="sendPDOButton">
+              <property name="text">
+               <string>&amp;Send PDO</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="tab_3">
+         <attribute name="title">
+          <string>S&amp;DO</string>
+         </attribute>
+         <layout class="QVBoxLayout" name="verticalLayout_14">
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_10">
+            <item>
+             <layout class="QGridLayout" name="gridLayout_5">
+              <item row="0" column="0">
+               <widget class="QLabel" name="canopenDeviceIdLabel_3_3">
+                <property name="text">
+                 <string>CANopen Device ID</string>
+                </property>
+                <property name="wordWrap">
+                 <bool>false</bool>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="1">
+               <widget class="QSpinBox" name="canopenSDODeviceId">
+                <property name="maximum">
+                 <number>127</number>
+                </property>
+                <property name="value">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="2">
+               <widget class="QCheckBox" name="canopenSDOWFlag">
+                <property name="text">
+                 <string>Listen w message before send</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="2">
+               <widget class="QCheckBox" name="canopenSDOReadWrite">
+                <property name="text">
+                 <string>Read (activ)/Write</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_12">
+              <item>
+               <widget class="QRadioButton" name="canopenSDONormal">
+                <property name="text">
+                 <string>Normal</string>
+                </property>
+                <property name="checked">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QRadioButton" name="RadioButton92">
+                <property name="text">
+                 <string>Expedited</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QGridLayout" name="gridLayout_6">
+            <item row="0" column="0">
+             <widget class="QLabel" name="TextLabel1">
+              <property name="text">
+               <string>Command Specifier</string>
+              </property>
+              <property name="wordWrap">
+               <bool>false</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QComboBox" name="canopenSDOCommandSpecifier">
+              <item>
+               <property name="text">
                 <string>Init Domain Download</string>
-              </property>
-            </item>
-            <item>
-              <property name="text">
+               </property>
+              </item>
+              <item>
+               <property name="text">
                 <string>Download Domain Segment</string>
-              </property>
-            </item>
-            <item>
-              <property name="text">
+               </property>
+              </item>
+              <item>
+               <property name="text">
                 <string>Init Domain Upload</string>
-              </property>
-            </item>
-            <item>
-              <property name="text">
+               </property>
+              </item>
+              <item>
+               <property name="text">
                 <string>Upload Domain Segment</string>
-              </property>
-            </item>
-            <item>
-              <property name="text">
+               </property>
+              </item>
+              <item>
+               <property name="text">
                 <string>Abort Domain Transfer</string>
-              </property>
+               </property>
+              </item>
+             </widget>
             </item>
-          </widget>
-          <widget class="QCheckBox" name="canopenSDOReadWrite">
-            <property name="geometry">
-              <rect>
-                <x>230</x>
-                <y>40</y>
-                <width>147</width>
-                <height>26</height>
-              </rect>
-            </property>
-            <property name="text">
-              <string>Read (activ)/Write</string>
-            </property>
-          </widget>
-          <widget class="QCheckBox" name="canopenSDOWFlag">
-            <property name="geometry">
-              <rect>
-                <x>230</x>
-                <y>10</y>
-                <width>250</width>
-                <height>26</height>
-              </rect>
-            </property>
-            <property name="text">
-              <string>Listen w message before send</string>
-            </property>
-          </widget>
-          <widget class="Q3ButtonGroup" name="canopenSDOExpedited">
-            <property name="geometry">
-              <rect>
-                <x>470</x>
-                <y>10</y>
-                <width>110</width>
-                <height>70</height>
-              </rect>
-            </property>
-            <property name="title">
-              <string>Transfer</string>
-            </property>
-            <widget class="QRadioButton" name="RadioButton92">
-              <property name="geometry">
-                <rect>
-                  <x>10</x>
-                  <y>40</y>
-                  <width>87</width>
-                  <height>21</height>
-                </rect>
-              </property>
-              <property name="text">
-                <string>Expedited</string>
-              </property>
-            </widget>
-            <widget class="QRadioButton" name="canopenSDONormal">
-              <property name="geometry">
-                <rect>
-                  <x>10</x>
-                  <y>20</y>
-                  <width>69</width>
-                  <height>21</height>
-                </rect>
-              </property>
-              <property name="text">
-                <string>Normal</string>
-              </property>
-              <property name="checked">
-                <bool>true</bool>
-              </property>
-            </widget>
-          </widget>
-          <widget class="Q3ButtonGroup" name="canopenSDODatatypeGroup">
-            <property name="geometry">
-              <rect>
-                <x>500</x>
-                <y>110</y>
-                <width>80</width>
-                <height>90</height>
-              </rect>
-            </property>
-            <property name="title">
-              <string>Data Typ</string>
-            </property>
-            <widget class="QRadioButton" name="canopenSDOBinFormat">
-              <property name="geometry">
-                <rect>
-                  <x>10</x>
-                  <y>40</y>
-                  <width>44</width>
-                  <height>21</height>
-                </rect>
-              </property>
-              <property name="text">
-                <string>Bin</string>
-              </property>
-            </widget>
-            <widget class="QRadioButton" name="canopenSDOHexFormat">
-              <property name="geometry">
-                <rect>
-                  <x>10</x>
-                  <y>20</y>
-                  <width>49</width>
-                  <height>21</height>
-                </rect>
-              </property>
-              <property name="text">
-                <string>Hex</string>
-              </property>
-              <property name="checked">
-                <bool>true</bool>
-              </property>
-            </widget>
-            <widget class="QRadioButton" name="canopenSDODecFormat">
-              <property name="geometry">
-                <rect>
-                  <x>10</x>
-                  <y>60</y>
-                  <width>50</width>
-                  <height>21</height>
-                </rect>
-              </property>
-              <property name="text">
-                <string>Dec</string>
-              </property>
-            </widget>
-          </widget>
-          <widget class="QPushButton" name="sendSDOButton">
-            <property name="enabled">
-              <bool>false</bool>
-            </property>
-            <property name="geometry">
-              <rect>
-                <x>10</x>
-                <y>210</y>
-                <width>120</width>
-                <height>29</height>
-              </rect>
-            </property>
-            <property name="text">
-              <string>&amp;Send SDO</string>
-            </property>
-          </widget>
-        </widget>
-        <widget class="QWidget" name="tab">
-          <attribute name="title">
-            <string>&amp;NMT</string>
-          </attribute>
-          <widget class="QComboBox" name="nmtState">
-            <property name="enabled">
-              <bool>true</bool>
-            </property>
-            <property name="geometry">
-              <rect>
-                <x>180</x>
-                <y>90</y>
-                <width>281</width>
-                <height>21</height>
-              </rect>
-            </property>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_9">
             <item>
+             <layout class="QGridLayout" name="gridLayout_7">
+              <item row="0" column="0">
+               <widget class="QLabel" name="canopenDataLabel_3_2">
+                <property name="text">
+                 <string>CANopen Data</string>
+                </property>
+                <property name="wordWrap">
+                 <bool>false</bool>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="1">
+               <widget class="QLineEdit" name="canopenSDOData1">
+                <property name="text">
+                 <string>0x0</string>
+                </property>
+                <property name="maxLength">
+                 <number>8</number>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignRight</set>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="2">
+               <widget class="QLineEdit" name="canopenSDOData2">
+                <property name="text">
+                 <string>0x0</string>
+                </property>
+                <property name="maxLength">
+                 <number>8</number>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignRight</set>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="3">
+               <widget class="QLineEdit" name="canopenSDOData3">
+                <property name="text">
+                 <string>0x0</string>
+                </property>
+                <property name="maxLength">
+                 <number>8</number>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignRight</set>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="4">
+               <widget class="QLineEdit" name="canopenSDOData4">
+                <property name="text">
+                 <string>0x0</string>
+                </property>
+                <property name="maxLength">
+                 <number>8</number>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignRight</set>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="1">
+               <widget class="QLineEdit" name="canopenSDOData5">
+                <property name="text">
+                 <string>0x0</string>
+                </property>
+                <property name="maxLength">
+                 <number>8</number>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignRight</set>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="2">
+               <widget class="QLineEdit" name="canopenSDOData6">
+                <property name="text">
+                 <string>0x0</string>
+                </property>
+                <property name="maxLength">
+                 <number>8</number>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignRight</set>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="3">
+               <widget class="QLineEdit" name="canopenSDOData7">
+                <property name="text">
+                 <string>0x0</string>
+                </property>
+                <property name="maxLength">
+                 <number>8</number>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignRight</set>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_13">
+              <item>
+               <widget class="QRadioButton" name="canopenSDOHexFormat">
+                <property name="text">
+                 <string>Hex</string>
+                </property>
+                <property name="checked">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QRadioButton" name="canopenSDOBinFormat">
+                <property name="text">
+                 <string>Bin</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QRadioButton" name="canopenSDODecFormat">
+                <property name="text">
+                 <string>Dec</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <spacer name="verticalSpacer_6">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_11">
+            <item>
+             <spacer name="horizontalSpacer_6">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QPushButton" name="sendSDOButton">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
               <property name="text">
+               <string>&amp;Send SDO</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="tab_4">
+         <attribute name="title">
+          <string>&amp;NMT</string>
+         </attribute>
+         <layout class="QVBoxLayout" name="verticalLayout_15">
+          <item>
+           <layout class="QGridLayout" name="gridLayout_9">
+            <item row="0" column="0">
+             <widget class="QLabel" name="canopenDeviceIdLabel_3_2">
+              <property name="text">
+               <string>CANopen Device ID</string>
+              </property>
+              <property name="wordWrap">
+               <bool>false</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QSpinBox" name="canopenNMTDeviceId">
+              <property name="maximum">
+               <number>127</number>
+              </property>
+              <property name="value">
+               <number>1</number>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QGridLayout" name="gridLayout_8">
+            <item row="0" column="0">
+             <widget class="QLabel" name="nmtStateLabel_3">
+              <property name="text">
+               <string>NMT State</string>
+              </property>
+              <property name="wordWrap">
+               <bool>false</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QComboBox" name="nmtState">
+              <property name="enabled">
+               <bool>true</bool>
+              </property>
+              <item>
+               <property name="text">
                 <string>Start Remote Node</string>
-              </property>
-            </item>
-            <item>
-              <property name="text">
+               </property>
+              </item>
+              <item>
+               <property name="text">
                 <string>Stop Remote Node</string>
-              </property>
-            </item>
-            <item>
-              <property name="text">
+               </property>
+              </item>
+              <item>
+               <property name="text">
                 <string>Pre Operational State</string>
-              </property>
-            </item>
-            <item>
-              <property name="text">
+               </property>
+              </item>
+              <item>
+               <property name="text">
                 <string>Reset Node</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Reset Communication</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <spacer name="verticalSpacer">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_12">
+            <item>
+             <spacer name="horizontalSpacer_7">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
               </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
             </item>
             <item>
+             <widget class="QPushButton" name="sendNMTButton">
               <property name="text">
-                <string>Reset Communication</string>
+               <string>&amp;Send NMT</string>
               </property>
+             </widget>
             </item>
-          </widget>
-          <widget class="QLabel" name="nmtStateLabel_3">
-            <property name="geometry">
-              <rect>
-                <x>50</x>
-                <y>90</y>
-                <width>69</width>
-                <height>17</height>
-              </rect>
-            </property>
-            <property name="text">
-              <string>NMT State</string>
-            </property>
-            <property name="wordWrap">
-              <bool>false</bool>
-            </property>
-          </widget>
-          <widget class="QSpinBox" name="canopenNMTDeviceId">
-            <property name="geometry">
-              <rect>
-                <x>160</x>
-                <y>16</y>
-                <width>58</width>
-                <height>25</height>
-              </rect>
-            </property>
-            <property name="maximum">
-              <number>127</number>
-            </property>
-            <property name="value">
-              <number>1</number>
-            </property>
-          </widget>
-          <widget class="QLabel" name="canopenDeviceIdLabel_3_2">
-            <property name="geometry">
-              <rect>
-                <x>20</x>
-                <y>20</y>
-                <width>131</width>
-                <height>17</height>
-              </rect>
-            </property>
-            <property name="text">
-              <string>CANopen Device ID</string>
-            </property>
-            <property name="wordWrap">
-              <bool>false</bool>
-            </property>
-          </widget>
-          <widget class="QPushButton" name="sendNMTButton">
-            <property name="geometry">
-              <rect>
-                <x>10</x>
-                <y>210</y>
-                <width>120</width>
-                <height>30</height>
-              </rect>
-            </property>
-            <property name="text">
-              <string>&amp;Send NMT</string>
-            </property>
-          </widget>
+           </layout>
+          </item>
+         </layout>
         </widget>
-        <widget class="QWidget" name="tab">
-          <attribute name="title">
-            <string>S&amp;ync</string>
-          </attribute>
-          <widget class="QPushButton" name="sendSyncButton">
-            <property name="geometry">
-              <rect>
-                <x>10</x>
-                <y>210</y>
-                <width>120</width>
-                <height>30</height>
-              </rect>
+        <widget class="QWidget" name="tab_5">
+         <attribute name="title">
+          <string>S&amp;ync</string>
+         </attribute>
+         <layout class="QVBoxLayout" name="verticalLayout_16">
+          <item>
+           <spacer name="verticalSpacer_2">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
             </property>
-            <property name="text">
-              <string>&amp;Send Sync</string>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>244</height>
+             </size>
             </property>
-          </widget>
+           </spacer>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_13">
+            <item>
+             <spacer name="horizontalSpacer_8">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QPushButton" name="sendSyncButton">
+              <property name="text">
+               <string>&amp;Send Sync</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
         </widget>
-        <widget class="QWidget" name="tab">
-          <attribute name="title">
-            <string>&amp;Dictionary</string>
-          </attribute>
-          <widget class="QLabel" name="canopenDeviceIdLabel_3_2_2">
-            <property name="geometry">
-              <rect>
-                <x>20</x>
-                <y>20</y>
-                <width>131</width>
-                <height>17</height>
-              </rect>
+        <widget class="QWidget" name="tab_6">
+         <attribute name="title">
+          <string>&amp;Dictionary</string>
+         </attribute>
+         <layout class="QVBoxLayout" name="verticalLayout_18">
+          <item>
+           <layout class="QGridLayout" name="gridLayout_10">
+            <item row="0" column="0">
+             <widget class="QLabel" name="canopenDeviceIdLabel_3_2_2">
+              <property name="text">
+               <string>CANopen Device ID</string>
+              </property>
+              <property name="wordWrap">
+               <bool>false</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QSpinBox" name="canopenDictDeviceId">
+              <property name="maximum">
+               <number>127</number>
+              </property>
+              <property name="value">
+               <number>1</number>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QGridLayout" name="gridLayout_11">
+            <item row="0" column="0">
+             <widget class="QLabel" name="TextLabel1_2">
+              <property name="text">
+               <string>Index</string>
+              </property>
+              <property name="wordWrap">
+               <bool>false</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0" colspan="2">
+             <widget class="QLabel" name="TextLabel2">
+              <property name="text">
+               <string>Subindex</string>
+              </property>
+              <property name="wordWrap">
+               <bool>false</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="2">
+             <widget class="QLineEdit" name="canopenDictSubIndex">
+              <property name="text">
+               <string>0x00</string>
+              </property>
+              <property name="maxLength">
+               <number>8</number>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignRight</set>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="2">
+             <widget class="QLineEdit" name="canopenDictIndex">
+              <property name="text">
+               <string>0x0000</string>
+              </property>
+              <property name="maxLength">
+               <number>16</number>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignRight</set>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_14">
+            <item>
+             <layout class="QGridLayout" name="gridLayout_12">
+              <item row="0" column="0">
+               <widget class="QLabel" name="TextLabel3">
+                <property name="text">
+                 <string>Data</string>
+                </property>
+                <property name="wordWrap">
+                 <bool>false</bool>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="1">
+               <widget class="QLineEdit" name="canopenDictData0">
+                <property name="text">
+                 <string>0x0</string>
+                </property>
+                <property name="maxLength">
+                 <number>8</number>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignRight</set>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="2">
+               <widget class="QLineEdit" name="canopenDictData1">
+                <property name="text">
+                 <string>0x0</string>
+                </property>
+                <property name="maxLength">
+                 <number>8</number>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignRight</set>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="3">
+               <widget class="QLineEdit" name="canopenDictData2">
+                <property name="text">
+                 <string>0x0</string>
+                </property>
+                <property name="maxLength">
+                 <number>8</number>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignRight</set>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="4">
+               <widget class="QLineEdit" name="canopenDictData3">
+                <property name="text">
+                 <string>0x0</string>
+                </property>
+                <property name="maxLength">
+                 <number>8</number>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignRight</set>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="5">
+               <widget class="QLineEdit" name="canopenDictData4">
+                <property name="text">
+                 <string>0x0</string>
+                </property>
+                <property name="maxLength">
+                 <number>8</number>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignRight</set>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="1">
+               <widget class="QLineEdit" name="canopenDictData5">
+                <property name="text">
+                 <string>0x0</string>
+                </property>
+                <property name="maxLength">
+                 <number>8</number>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignRight</set>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="2">
+               <widget class="QLineEdit" name="canopenDictData6">
+                <property name="text">
+                 <string>0x0</string>
+                </property>
+                <property name="maxLength">
+                 <number>8</number>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignRight</set>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="3">
+               <widget class="QLineEdit" name="canopenDictData7">
+                <property name="text">
+                 <string>0x0</string>
+                </property>
+                <property name="maxLength">
+                 <number>8</number>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignRight</set>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="4">
+               <widget class="QLineEdit" name="canopenDictData8">
+                <property name="text">
+                 <string>0x0</string>
+                </property>
+                <property name="maxLength">
+                 <number>8</number>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignRight</set>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="5">
+               <widget class="QLineEdit" name="canopenDictData9">
+                <property name="text">
+                 <string>0x0</string>
+                </property>
+                <property name="maxLength">
+                 <number>8</number>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignRight</set>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="1">
+               <widget class="QLineEdit" name="canopenDictData10">
+                <property name="text">
+                 <string>0x0</string>
+                </property>
+                <property name="maxLength">
+                 <number>8</number>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignRight</set>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="2">
+               <widget class="QLineEdit" name="canopenDictData11">
+                <property name="text">
+                 <string>0x0</string>
+                </property>
+                <property name="maxLength">
+                 <number>8</number>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignRight</set>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="3">
+               <widget class="QLineEdit" name="canopenDictData12">
+                <property name="text">
+                 <string>0x0</string>
+                </property>
+                <property name="maxLength">
+                 <number>8</number>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignRight</set>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="4">
+               <widget class="QLineEdit" name="canopenDictData13">
+                <property name="text">
+                 <string>0x0</string>
+                </property>
+                <property name="maxLength">
+                 <number>8</number>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignRight</set>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="5">
+               <widget class="QLineEdit" name="canopenDictData14">
+                <property name="text">
+                 <string>0x0</string>
+                </property>
+                <property name="maxLength">
+                 <number>8</number>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignRight</set>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_17">
+              <item>
+               <widget class="QRadioButton" name="canopenDictHexFormat">
+                <property name="text">
+                 <string>Hex</string>
+                </property>
+                <property name="checked">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QRadioButton" name="canopenDictBinFormat">
+                <property name="text">
+                 <string>Bin</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QRadioButton" name="canopenDictDecFormat">
+                <property name="text">
+                 <string>Dec</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <spacer name="verticalSpacer_7">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
             </property>
-            <property name="text">
-              <string>CANopen Device ID</string>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
             </property>
-            <property name="wordWrap">
-              <bool>false</bool>
-            </property>
-          </widget>
-          <widget class="QPushButton" name="readDictEntry">
-            <property name="geometry">
-              <rect>
-                <x>10</x>
-                <y>210</y>
-                <width>120</width>
-                <height>30</height>
-              </rect>
-            </property>
-            <property name="text">
-              <string>&amp;Read Entry</string>
-            </property>
-          </widget>
-          <widget class="QLabel" name="TextLabel1_2">
-            <property name="geometry">
-              <rect>
-                <x>20</x>
-                <y>60</y>
-                <width>36</width>
-                <height>17</height>
-              </rect>
-            </property>
-            <property name="text">
-              <string>Index</string>
-            </property>
-            <property name="wordWrap">
-              <bool>false</bool>
-            </property>
-          </widget>
-          <widget class="QLabel" name="TextLabel2">
-            <property name="geometry">
-              <rect>
-                <x>18</x>
-                <y>95</y>
-                <width>59</width>
-                <height>17</height>
-              </rect>
-            </property>
-            <property name="text">
-              <string>Subindex</string>
-            </property>
-            <property name="wordWrap">
-              <bool>false</bool>
-            </property>
-          </widget>
-          <widget class="Q3ButtonGroup" name="canopenDictDatatypeGroup">
-            <property name="geometry">
-              <rect>
-                <x>500</x>
-                <y>10</y>
-                <width>80</width>
-                <height>90</height>
-              </rect>
-            </property>
-            <property name="title">
-              <string>Data Typ</string>
-            </property>
-            <widget class="QRadioButton" name="canopenDictHexFormat">
-              <property name="geometry">
-                <rect>
-                  <x>10</x>
-                  <y>20</y>
-                  <width>49</width>
-                  <height>21</height>
-                </rect>
+           </spacer>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_15">
+            <item>
+             <widget class="QPushButton" name="viewTransferTableButton">
+              <property name="enabled">
+               <bool>false</bool>
               </property>
               <property name="text">
-                <string>Hex</string>
+               <string>&amp;View Transfertable</string>
               </property>
-              <property name="checked">
-                <bool>true</bool>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer_9">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
               </property>
-            </widget>
-            <widget class="QRadioButton" name="canopenDictBinFormat">
-              <property name="geometry">
-                <rect>
-                  <x>10</x>
-                  <y>40</y>
-                  <width>44</width>
-                  <height>21</height>
-                </rect>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
               </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QPushButton" name="readDictEntry">
               <property name="text">
-                <string>Bin</string>
+               <string>&amp;Read Entry</string>
               </property>
-            </widget>
-            <widget class="QRadioButton" name="canopenDictDecFormat">
-              <property name="geometry">
-                <rect>
-                  <x>10</x>
-                  <y>60</y>
-                  <width>50</width>
-                  <height>21</height>
-                </rect>
-              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="writeDictEntry">
               <property name="text">
-                <string>Dec</string>
+               <string>&amp;Write Entry</string>
               </property>
-            </widget>
-          </widget>
-          <widget class="QLabel" name="TextLabel3">
-            <property name="geometry">
-              <rect>
-                <x>28</x>
-                <y>125</y>
-                <width>30</width>
-                <height>17</height>
-              </rect>
-            </property>
-            <property name="text">
-              <string>Data</string>
-            </property>
-            <property name="wordWrap">
-              <bool>false</bool>
-            </property>
-          </widget>
-          <widget class="QLineEdit" name="canopenDictData1">
-            <property name="geometry">
-              <rect>
-                <x>220</x>
-                <y>120</y>
-                <width>80</width>
-                <height>22</height>
-              </rect>
-            </property>
-            <property name="text">
-              <string>0x0</string>
-            </property>
-            <property name="maxLength">
-              <number>8</number>
-            </property>
-            <property name="alignment">
-              <set>Qt::AlignRight</set>
-            </property>
-          </widget>
-          <widget class="QLineEdit" name="canopenDictData2">
-            <property name="geometry">
-              <rect>
-                <x>310</x>
-                <y>120</y>
-                <width>80</width>
-                <height>22</height>
-              </rect>
-            </property>
-            <property name="text">
-              <string>0x0</string>
-            </property>
-            <property name="maxLength">
-              <number>8</number>
-            </property>
-            <property name="alignment">
-              <set>Qt::AlignRight</set>
-            </property>
-          </widget>
-          <widget class="QLineEdit" name="canopenDictData3">
-            <property name="geometry">
-              <rect>
-                <x>400</x>
-                <y>120</y>
-                <width>80</width>
-                <height>22</height>
-              </rect>
-            </property>
-            <property name="text">
-              <string>0x0</string>
-            </property>
-            <property name="maxLength">
-              <number>8</number>
-            </property>
-            <property name="alignment">
-              <set>Qt::AlignRight</set>
-            </property>
-          </widget>
-          <widget class="QLineEdit" name="canopenDictData4">
-            <property name="geometry">
-              <rect>
-                <x>490</x>
-                <y>120</y>
-                <width>80</width>
-                <height>22</height>
-              </rect>
-            </property>
-            <property name="text">
-              <string>0x0</string>
-            </property>
-            <property name="maxLength">
-              <number>8</number>
-            </property>
-            <property name="alignment">
-              <set>Qt::AlignRight</set>
-            </property>
-          </widget>
-          <widget class="QLineEdit" name="canopenDictData5">
-            <property name="geometry">
-              <rect>
-                <x>130</x>
-                <y>150</y>
-                <width>80</width>
-                <height>22</height>
-              </rect>
-            </property>
-            <property name="text">
-              <string>0x0</string>
-            </property>
-            <property name="maxLength">
-              <number>8</number>
-            </property>
-            <property name="alignment">
-              <set>Qt::AlignRight</set>
-            </property>
-          </widget>
-          <widget class="QLineEdit" name="canopenDictData6">
-            <property name="geometry">
-              <rect>
-                <x>220</x>
-                <y>150</y>
-                <width>80</width>
-                <height>22</height>
-              </rect>
-            </property>
-            <property name="text">
-              <string>0x0</string>
-            </property>
-            <property name="maxLength">
-              <number>8</number>
-            </property>
-            <property name="alignment">
-              <set>Qt::AlignRight</set>
-            </property>
-          </widget>
-          <widget class="QLineEdit" name="canopenDictData7">
-            <property name="geometry">
-              <rect>
-                <x>310</x>
-                <y>150</y>
-                <width>80</width>
-                <height>22</height>
-              </rect>
-            </property>
-            <property name="text">
-              <string>0x0</string>
-            </property>
-            <property name="maxLength">
-              <number>8</number>
-            </property>
-            <property name="alignment">
-              <set>Qt::AlignRight</set>
-            </property>
-          </widget>
-          <widget class="QLineEdit" name="canopenDictData8">
-            <property name="geometry">
-              <rect>
-                <x>400</x>
-                <y>150</y>
-                <width>80</width>
-                <height>22</height>
-              </rect>
-            </property>
-            <property name="text">
-              <string>0x0</string>
-            </property>
-            <property name="maxLength">
-              <number>8</number>
-            </property>
-            <property name="alignment">
-              <set>Qt::AlignRight</set>
-            </property>
-          </widget>
-          <widget class="QLineEdit" name="canopenDictData9">
-            <property name="geometry">
-              <rect>
-                <x>490</x>
-                <y>150</y>
-                <width>80</width>
-                <height>22</height>
-              </rect>
-            </property>
-            <property name="text">
-              <string>0x0</string>
-            </property>
-            <property name="maxLength">
-              <number>8</number>
-            </property>
-            <property name="alignment">
-              <set>Qt::AlignRight</set>
-            </property>
-          </widget>
-          <widget class="QLineEdit" name="canopenDictData10">
-            <property name="geometry">
-              <rect>
-                <x>130</x>
-                <y>180</y>
-                <width>80</width>
-                <height>22</height>
-              </rect>
-            </property>
-            <property name="text">
-              <string>0x0</string>
-            </property>
-            <property name="maxLength">
-              <number>8</number>
-            </property>
-            <property name="alignment">
-              <set>Qt::AlignRight</set>
-            </property>
-          </widget>
-          <widget class="QLineEdit" name="canopenDictData11">
-            <property name="geometry">
-              <rect>
-                <x>220</x>
-                <y>180</y>
-                <width>80</width>
-                <height>22</height>
-              </rect>
-            </property>
-            <property name="text">
-              <string>0x0</string>
-            </property>
-            <property name="maxLength">
-              <number>8</number>
-            </property>
-            <property name="alignment">
-              <set>Qt::AlignRight</set>
-            </property>
-          </widget>
-          <widget class="QLineEdit" name="canopenDictData12">
-            <property name="geometry">
-              <rect>
-                <x>310</x>
-                <y>180</y>
-                <width>80</width>
-                <height>22</height>
-              </rect>
-            </property>
-            <property name="text">
-              <string>0x0</string>
-            </property>
-            <property name="maxLength">
-              <number>8</number>
-            </property>
-            <property name="alignment">
-              <set>Qt::AlignRight</set>
-            </property>
-          </widget>
-          <widget class="QLineEdit" name="canopenDictData13">
-            <property name="geometry">
-              <rect>
-                <x>400</x>
-                <y>180</y>
-                <width>80</width>
-                <height>22</height>
-              </rect>
-            </property>
-            <property name="text">
-              <string>0x0</string>
-            </property>
-            <property name="maxLength">
-              <number>8</number>
-            </property>
-            <property name="alignment">
-              <set>Qt::AlignRight</set>
-            </property>
-          </widget>
-          <widget class="QLineEdit" name="canopenDictData14">
-            <property name="geometry">
-              <rect>
-                <x>490</x>
-                <y>180</y>
-                <width>80</width>
-                <height>22</height>
-              </rect>
-            </property>
-            <property name="text">
-              <string>0x0</string>
-            </property>
-            <property name="maxLength">
-              <number>8</number>
-            </property>
-            <property name="alignment">
-              <set>Qt::AlignRight</set>
-            </property>
-          </widget>
-          <widget class="QLineEdit" name="canopenDictSubIndex">
-            <property name="geometry">
-              <rect>
-                <x>130</x>
-                <y>90</y>
-                <width>80</width>
-                <height>22</height>
-              </rect>
-            </property>
-            <property name="text">
-              <string>0x00</string>
-            </property>
-            <property name="maxLength">
-              <number>8</number>
-            </property>
-            <property name="alignment">
-              <set>Qt::AlignRight</set>
-            </property>
-          </widget>
-          <widget class="QLineEdit" name="canopenDictIndex">
-            <property name="geometry">
-              <rect>
-                <x>70</x>
-                <y>60</y>
-                <width>140</width>
-                <height>22</height>
-              </rect>
-            </property>
-            <property name="text">
-              <string>0x0000</string>
-            </property>
-            <property name="maxLength">
-              <number>16</number>
-            </property>
-            <property name="alignment">
-              <set>Qt::AlignRight</set>
-            </property>
-          </widget>
-          <widget class="QSpinBox" name="canopenDictDeviceId">
-            <property name="geometry">
-              <rect>
-                <x>160</x>
-                <y>16</y>
-                <width>58</width>
-                <height>25</height>
-              </rect>
-            </property>
-            <property name="maximum">
-              <number>127</number>
-            </property>
-            <property name="value">
-              <number>1</number>
-            </property>
-          </widget>
-          <widget class="QLineEdit" name="canopenDictData0">
-            <property name="geometry">
-              <rect>
-                <x>130</x>
-                <y>120</y>
-                <width>80</width>
-                <height>22</height>
-              </rect>
-            </property>
-            <property name="text">
-              <string>0x0</string>
-            </property>
-            <property name="maxLength">
-              <number>8</number>
-            </property>
-            <property name="alignment">
-              <set>Qt::AlignRight</set>
-            </property>
-          </widget>
-          <widget class="QPushButton" name="writeDictEntry">
-            <property name="geometry">
-              <rect>
-                <x>160</x>
-                <y>210</y>
-                <width>120</width>
-                <height>30</height>
-              </rect>
-            </property>
-            <property name="text">
-              <string>&amp;Write Entry</string>
-            </property>
-          </widget>
-          <widget class="QPushButton" name="viewTransferTableButton">
-            <property name="enabled">
-              <bool>false</bool>
-            </property>
-            <property name="geometry">
-              <rect>
-                <x>310</x>
-                <y>210</y>
-                <width>156</width>
-                <height>29</height>
-              </rect>
-            </property>
-            <property name="text">
-              <string>&amp;View Transfertable</string>
-            </property>
-          </widget>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
         </widget>
-        <widget class="QWidget" name="tab">
-          <attribute name="title">
-            <string>Process &amp;Vars</string>
-          </attribute>
-          <widget class="QLabel" name="canopenDeviceIdLabel_3_4">
-            <property name="geometry">
-              <rect>
-                <x>20</x>
-                <y>20</y>
-                <width>131</width>
-                <height>17</height>
-              </rect>
+        <widget class="QWidget" name="tab_7">
+         <attribute name="title">
+          <string>Process &amp;Variables</string>
+         </attribute>
+         <layout class="QVBoxLayout" name="verticalLayout_21">
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_16">
+            <item>
+             <layout class="QGridLayout" name="gridLayout_14">
+              <item row="0" column="0">
+               <widget class="QLabel" name="canopenDeviceIdLabel_3_4">
+                <property name="text">
+                 <string>CANopen Device ID</string>
+                </property>
+                <property name="wordWrap">
+                 <bool>false</bool>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="1">
+               <widget class="QSpinBox" name="canopenPVarDeviceId">
+                <property name="maximum">
+                 <number>127</number>
+                </property>
+                <property name="value">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_20">
+              <item>
+               <widget class="QRadioButton" name="canopenPVarNow">
+                <property name="text">
+                 <string>&amp;Now</string>
+                </property>
+                <property name="checked">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QRadioButton" name="canopenPVarLater">
+                <property name="text">
+                 <string>&amp;Later</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_17">
+            <item>
+             <layout class="QGridLayout" name="gridLayout_13">
+              <item row="0" column="0">
+               <widget class="QLabel" name="canopenDataLabel_3_3">
+                <property name="text">
+                 <string>CANopen Data</string>
+                </property>
+                <property name="wordWrap">
+                 <bool>false</bool>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="1">
+               <widget class="QLineEdit" name="canopenPVarData0">
+                <property name="text">
+                 <string>0x0</string>
+                </property>
+                <property name="maxLength">
+                 <number>8</number>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignRight</set>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="2">
+               <widget class="QLineEdit" name="canopenPVarData1">
+                <property name="text">
+                 <string>0x0</string>
+                </property>
+                <property name="maxLength">
+                 <number>8</number>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignRight</set>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="3">
+               <widget class="QLineEdit" name="canopenPVarData2">
+                <property name="text">
+                 <string>0x0</string>
+                </property>
+                <property name="maxLength">
+                 <number>8</number>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignRight</set>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="4">
+               <widget class="QLineEdit" name="canopenPVarData3">
+                <property name="text">
+                 <string>0x0</string>
+                </property>
+                <property name="maxLength">
+                 <number>8</number>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignRight</set>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="1">
+               <widget class="QLineEdit" name="canopenPVarData4">
+                <property name="text">
+                 <string>0x0</string>
+                </property>
+                <property name="maxLength">
+                 <number>8</number>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignRight</set>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="2">
+               <widget class="QLineEdit" name="canopenPVarData5">
+                <property name="text">
+                 <string>0x0</string>
+                </property>
+                <property name="maxLength">
+                 <number>8</number>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignRight</set>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="3">
+               <widget class="QLineEdit" name="canopenPVarData6">
+                <property name="text">
+                 <string>0x0</string>
+                </property>
+                <property name="maxLength">
+                 <number>8</number>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignRight</set>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="4">
+               <widget class="QLineEdit" name="canopenPVarData7">
+                <property name="text">
+                 <string>0x0</string>
+                </property>
+                <property name="maxLength">
+                 <number>8</number>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignRight</set>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_19">
+              <item>
+               <widget class="QRadioButton" name="canopenPVarHexFormat">
+                <property name="text">
+                 <string>Hex</string>
+                </property>
+                <property name="checked">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QRadioButton" name="canopenPVarBinFormat">
+                <property name="text">
+                 <string>Bin</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QRadioButton" name="canopenPVarDecFormat">
+                <property name="text">
+                 <string>Dec</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <spacer name="verticalSpacer_3">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
             </property>
-            <property name="text">
-              <string>CANopen Device ID</string>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
             </property>
-            <property name="wordWrap">
-              <bool>false</bool>
-            </property>
-          </widget>
-          <widget class="QPushButton" name="writePVarButton">
-            <property name="geometry">
-              <rect>
-                <x>10</x>
-                <y>170</y>
-                <width>186</width>
-                <height>29</height>
-              </rect>
-            </property>
-            <property name="text">
-              <string>&amp;Write Process Variable</string>
-            </property>
-          </widget>
-          <widget class="QLineEdit" name="canopenPVarData1">
-            <property name="geometry">
-              <rect>
-                <x>220</x>
-                <y>70</y>
-                <width>80</width>
-                <height>22</height>
-              </rect>
-            </property>
-            <property name="text">
-              <string>0x0</string>
-            </property>
-            <property name="maxLength">
-              <number>8</number>
-            </property>
-            <property name="alignment">
-              <set>Qt::AlignRight</set>
-            </property>
-          </widget>
-          <widget class="QLineEdit" name="canopenPVarData6">
-            <property name="geometry">
-              <rect>
-                <x>310</x>
-                <y>100</y>
-                <width>80</width>
-                <height>22</height>
-              </rect>
-            </property>
-            <property name="text">
-              <string>0x0</string>
-            </property>
-            <property name="maxLength">
-              <number>8</number>
-            </property>
-            <property name="alignment">
-              <set>Qt::AlignRight</set>
-            </property>
-          </widget>
-          <widget class="QLabel" name="canopenDataLabel_3_3">
-            <property name="geometry">
-              <rect>
-                <x>20</x>
-                <y>70</y>
-                <width>97</width>
-                <height>17</height>
-              </rect>
-            </property>
-            <property name="text">
-              <string>CANopen Data</string>
-            </property>
-            <property name="wordWrap">
-              <bool>false</bool>
-            </property>
-          </widget>
-          <widget class="QLineEdit" name="canopenPVarData3">
-            <property name="geometry">
-              <rect>
-                <x>400</x>
-                <y>70</y>
-                <width>80</width>
-                <height>22</height>
-              </rect>
-            </property>
-            <property name="text">
-              <string>0x0</string>
-            </property>
-            <property name="maxLength">
-              <number>8</number>
-            </property>
-            <property name="alignment">
-              <set>Qt::AlignRight</set>
-            </property>
-          </widget>
-          <widget class="QLineEdit" name="canopenPVarData0">
-            <property name="geometry">
-              <rect>
-                <x>130</x>
-                <y>70</y>
-                <width>80</width>
-                <height>22</height>
-              </rect>
-            </property>
-            <property name="text">
-              <string>0x0</string>
-            </property>
-            <property name="maxLength">
-              <number>8</number>
-            </property>
-            <property name="alignment">
-              <set>Qt::AlignRight</set>
-            </property>
-          </widget>
-          <widget class="QLineEdit" name="canopenPVarData4">
-            <property name="geometry">
-              <rect>
-                <x>130</x>
-                <y>100</y>
-                <width>80</width>
-                <height>22</height>
-              </rect>
-            </property>
-            <property name="text">
-              <string>0x0</string>
-            </property>
-            <property name="maxLength">
-              <number>8</number>
-            </property>
-            <property name="alignment">
-              <set>Qt::AlignRight</set>
-            </property>
-          </widget>
-          <widget class="QLineEdit" name="canopenPVarData2">
-            <property name="geometry">
-              <rect>
-                <x>310</x>
-                <y>70</y>
-                <width>80</width>
-                <height>22</height>
-              </rect>
-            </property>
-            <property name="text">
-              <string>0x0</string>
-            </property>
-            <property name="maxLength">
-              <number>8</number>
-            </property>
-            <property name="alignment">
-              <set>Qt::AlignRight</set>
-            </property>
-          </widget>
-          <widget class="QLineEdit" name="canopenPVarData5">
-            <property name="geometry">
-              <rect>
-                <x>220</x>
-                <y>100</y>
-                <width>80</width>
-                <height>22</height>
-              </rect>
-            </property>
-            <property name="text">
-              <string>0x0</string>
-            </property>
-            <property name="maxLength">
-              <number>8</number>
-            </property>
-            <property name="alignment">
-              <set>Qt::AlignRight</set>
-            </property>
-          </widget>
-          <widget class="QLineEdit" name="canopenPVarData7">
-            <property name="geometry">
-              <rect>
-                <x>400</x>
-                <y>100</y>
-                <width>80</width>
-                <height>22</height>
-              </rect>
-            </property>
-            <property name="text">
-              <string>0x0</string>
-            </property>
-            <property name="maxLength">
-              <number>8</number>
-            </property>
-            <property name="alignment">
-              <set>Qt::AlignRight</set>
-            </property>
-          </widget>
-          <widget class="QPushButton" name="downloadPVarButton">
-            <property name="geometry">
-              <rect>
-                <x>10</x>
-                <y>210</y>
-                <width>222</width>
-                <height>29</height>
-              </rect>
-            </property>
-            <property name="text">
-              <string>&amp;Download Process Variables</string>
-            </property>
-          </widget>
-          <widget class="Q3ButtonGroup" name="canopenPDODatatypeGroup_2">
-            <property name="geometry">
-              <rect>
-                <x>500</x>
-                <y>10</y>
-                <width>80</width>
-                <height>90</height>
-              </rect>
-            </property>
-            <property name="title">
-              <string>Data Typ</string>
-            </property>
-            <widget class="QRadioButton" name="canopenPVarHexFormat">
-              <property name="geometry">
-                <rect>
-                  <x>10</x>
-                  <y>20</y>
-                  <width>49</width>
-                  <height>21</height>
-                </rect>
+           </spacer>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_18">
+            <item>
+             <widget class="QPushButton" name="downloadPVarButton">
+              <property name="text">
+               <string>&amp;Download</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="showPVarButton">
+              <property name="text">
+               <string>S&amp;how all </string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer_10">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QPushButton" name="writePVarButton">
+              <property name="text">
+               <string>&amp;Write </string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="readPVarButton">
+              <property name="enabled">
+               <bool>false</bool>
               </property>
               <property name="text">
-                <string>Hex</string>
+               <string>&amp;Read </string>
               </property>
-              <property name="checked">
-                <bool>true</bool>
-              </property>
-            </widget>
-            <widget class="QRadioButton" name="canopenPVarBinFormat">
-              <property name="geometry">
-                <rect>
-                  <x>10</x>
-                  <y>40</y>
-                  <width>44</width>
-                  <height>21</height>
-                </rect>
-              </property>
-              <property name="text">
-                <string>Bin</string>
-              </property>
-            </widget>
-            <widget class="QRadioButton" name="canopenPVarDecFormat">
-              <property name="geometry">
-                <rect>
-                  <x>10</x>
-                  <y>60</y>
-                  <width>50</width>
-                  <height>21</height>
-                </rect>
-              </property>
-              <property name="text">
-                <string>Dec</string>
-              </property>
-            </widget>
-          </widget>
-          <widget class="Q3ButtonGroup" name="ButtonGroup8">
-            <property name="geometry">
-              <rect>
-                <x>320</x>
-                <y>10</y>
-                <width>150</width>
-                <height>50</height>
-              </rect>
-            </property>
-            <property name="title">
-              <string>Send time</string>
-            </property>
-            <widget class="QRadioButton" name="canopenPVarLater">
-              <property name="geometry">
-                <rect>
-                  <x>80</x>
-                  <y>20</y>
-                  <width>57</width>
-                  <height>21</height>
-                </rect>
-              </property>
-              <property name="text">
-                <string>&amp;Later</string>
-              </property>
-            </widget>
-            <widget class="QRadioButton" name="canopenPVarNow">
-              <property name="geometry">
-                <rect>
-                  <x>10</x>
-                  <y>20</y>
-                  <width>52</width>
-                  <height>21</height>
-                </rect>
-              </property>
-              <property name="text">
-                <string>&amp;Now</string>
-              </property>
-              <property name="checked">
-                <bool>true</bool>
-              </property>
-            </widget>
-          </widget>
-          <widget class="QSpinBox" name="canopenPVarDeviceId">
-            <property name="geometry">
-              <rect>
-                <x>160</x>
-                <y>16</y>
-                <width>58</width>
-                <height>25</height>
-              </rect>
-            </property>
-            <property name="maximum">
-              <number>127</number>
-            </property>
-            <property name="value">
-              <number>1</number>
-            </property>
-          </widget>
-          <widget class="QPushButton" name="showPVarButton">
-            <property name="geometry">
-              <rect>
-                <x>360</x>
-                <y>210</y>
-                <width>212</width>
-                <height>29</height>
-              </rect>
-            </property>
-            <property name="text">
-              <string>S&amp;how all Process Variables</string>
-            </property>
-          </widget>
-          <widget class="QPushButton" name="readPVarButton">
-            <property name="enabled">
-              <bool>false</bool>
-            </property>
-            <property name="geometry">
-              <rect>
-                <x>380</x>
-                <y>170</y>
-                <width>184</width>
-                <height>29</height>
-              </rect>
-            </property>
-            <property name="text">
-              <string>&amp;Read Process Variable</string>
-            </property>
-          </widget>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
         </widget>
-      </widget>
+       </widget>
+      </item>
+     </layout>
     </widget>
-  </widget>
-  <pixmapfunction>qPixmapFromMimeSource</pixmapfunction>
-  <tabstops>
-    <tabstop>canopenPDODeviceId</tabstop>
-    <tabstop>canopenPDOData0</tabstop>
-    <tabstop>canopenPDOData1</tabstop>
-    <tabstop>canopenPDOData2</tabstop>
-    <tabstop>canopenPDOData3</tabstop>
-    <tabstop>canopenPDOData4</tabstop>
-    <tabstop>canopenPDOData5</tabstop>
-    <tabstop>canopenPDOData6</tabstop>
-    <tabstop>canopenPDOData7</tabstop>
-    <tabstop>sendPDOButton</tabstop>
-    <tabstop>canopenPDOWFlag</tabstop>
-    <tabstop>canopenPDOReadWrite</tabstop>
-    <tabstop>canopenPDOHexFormat</tabstop>
-    <tabstop>canopenPDOBinFormat</tabstop>
-    <tabstop>canopenPDODecFormat</tabstop>
-    <tabstop>canopenDictDeviceId</tabstop>
-    <tabstop>canopenDictIndex</tabstop>
-    <tabstop>canopenDictSubIndex</tabstop>
-    <tabstop>canopenDictData0</tabstop>
-    <tabstop>canopenDictData1</tabstop>
-    <tabstop>canopenDictData2</tabstop>
-    <tabstop>canopenDictData3</tabstop>
-    <tabstop>canopenDictData4</tabstop>
-    <tabstop>canopenDictData5</tabstop>
-    <tabstop>canopenDictData6</tabstop>
-    <tabstop>canopenDictData7</tabstop>
-    <tabstop>canopenDictData8</tabstop>
-    <tabstop>canopenDictData9</tabstop>
-    <tabstop>canopenDictData10</tabstop>
-    <tabstop>canopenDictData11</tabstop>
-    <tabstop>canopenDictData12</tabstop>
-    <tabstop>canopenDictData13</tabstop>
-    <tabstop>canopenDictData14</tabstop>
-    <tabstop>readDictEntry</tabstop>
-    <tabstop>writeDictEntry</tabstop>
-    <tabstop>viewTransferTableButton</tabstop>
-    <tabstop>canIdentifier</tabstop>
-    <tabstop>canData0</tabstop>
-    <tabstop>canData1</tabstop>
-    <tabstop>canData2</tabstop>
-    <tabstop>canData3</tabstop>
-    <tabstop>canData4</tabstop>
-    <tabstop>canData5</tabstop>
-    <tabstop>canData6</tabstop>
-    <tabstop>canData7</tabstop>
-    <tabstop>canRTR</tabstop>
-    <tabstop>sendCanButton</tabstop>
-    <tabstop>readCanButton</tabstop>
-    <tabstop>TabWidget4</tabstop>
-    <tabstop>canopenSDODeviceId</tabstop>
-    <tabstop>canopenSDOCommandSpecifier</tabstop>
-    <tabstop>canopenSDOData1</tabstop>
-    <tabstop>canopenSDOData2</tabstop>
-    <tabstop>canopenSDOData3</tabstop>
-    <tabstop>canopenSDOData4</tabstop>
-    <tabstop>canopenSDOData5</tabstop>
-    <tabstop>canopenSDOData6</tabstop>
-    <tabstop>canopenSDOData7</tabstop>
-    <tabstop>canopenNMTDeviceId</tabstop>
-    <tabstop>nmtState</tabstop>
-    <tabstop>sendNMTButton</tabstop>
-    <tabstop>canopenPVarDeviceId</tabstop>
-    <tabstop>canopenPVarData0</tabstop>
-    <tabstop>canopenPVarData1</tabstop>
-    <tabstop>canopenPVarData2</tabstop>
-    <tabstop>canopenPVarData3</tabstop>
-    <tabstop>canopenPVarData4</tabstop>
-    <tabstop>canopenPVarData5</tabstop>
-    <tabstop>canopenPVarData6</tabstop>
-    <tabstop>canopenPVarData7</tabstop>
-    <tabstop>writePVarButton</tabstop>
-    <tabstop>readPVarButton</tabstop>
-    <tabstop>downloadPVarButton</tabstop>
-    <tabstop>showPVarButton</tabstop>
-    <tabstop>canPort</tabstop>
-    <tabstop>initModuleButton</tabstop>
-    <tabstop>SimulationNoRadioButton</tabstop>
-    <tabstop>canHexFormat</tabstop>
-    <tabstop>canBinFormat</tabstop>
-    <tabstop>canDecFormat</tabstop>
-    <tabstop>sendSDOButton</tabstop>
-    <tabstop>canopenSDOReadWrite</tabstop>
-    <tabstop>canopenSDOWFlag</tabstop>
-    <tabstop>canopenSDONormal</tabstop>
-    <tabstop>canopenSDOHexFormat</tabstop>
-    <tabstop>canopenSDODecFormat</tabstop>
-    <tabstop>sendSyncButton</tabstop>
-    <tabstop>canopenDictHexFormat</tabstop>
-    <tabstop>canopenDictBinFormat</tabstop>
-    <tabstop>canopenDictDecFormat</tabstop>
-    <tabstop>canopenPVarHexFormat</tabstop>
-    <tabstop>canopenPVarBinFormat</tabstop>
-    <tabstop>canopenPVarDecFormat</tabstop>
-    <tabstop>canopenPVarNow</tabstop>
-    <tabstop>clearCANopenLogButton</tabstop>
-    <tabstop>canLogView</tabstop>
-    <tabstop>PushButton65</tabstop>
-    <tabstop>canReceiveLog</tabstop>
-  </tabstops>
-  <connections>
-    <connection>
-      <sender>canPort</sender>
-      <signal>valueChanged(int)</signal>
-      <receiver>form1</receiver>
-      <slot>portChanged()</slot>
-    </connection>
-    <connection>
-      <sender>SimulationNoRadioButton</sender>
-      <signal>clicked()</signal>
-      <receiver>form1</receiver>
-      <slot>simulationNo()</slot>
-    </connection>
-    <connection>
-      <sender>sendCanButton</sender>
-      <signal>clicked()</signal>
-      <receiver>form1</receiver>
-      <slot>sendCan()</slot>
-    </connection>
-    <connection>
-      <sender>sendPDOButton</sender>
-      <signal>clicked()</signal>
-      <receiver>form1</receiver>
-      <slot>sendPDO()</slot>
-    </connection>
-    <connection>
-      <sender>sendNMTButton</sender>
-      <signal>clicked()</signal>
-      <receiver>form1</receiver>
-      <slot>sendNMT()</slot>
-    </connection>
-    <connection>
-      <sender>canHexFormat</sender>
-      <signal>clicked()</signal>
-      <receiver>form1</receiver>
-      <slot>canHEXClicked()</slot>
-    </connection>
-    <connection>
-      <sender>canDecFormat</sender>
-      <signal>clicked()</signal>
-      <receiver>form1</receiver>
-      <slot>canDECClicked()</slot>
-    </connection>
-    <connection>
-      <sender>canBinFormat</sender>
-      <signal>clicked()</signal>
-      <receiver>form1</receiver>
-      <slot>canBINClicked()</slot>
-    </connection>
-    <connection>
-      <sender>sendSDOButton</sender>
-      <signal>clicked()</signal>
-      <receiver>form1</receiver>
-      <slot>sendSDO()</slot>
-    </connection>
-    <connection>
-      <sender>sendSyncButton</sender>
-      <signal>clicked()</signal>
-      <receiver>form1</receiver>
-      <slot>sendSync()</slot>
-    </connection>
-    <connection>
-      <sender>canopenPDOHexFormat</sender>
-      <signal>clicked()</signal>
-      <receiver>form1</receiver>
-      <slot>canopenPDOHexClicked()</slot>
-    </connection>
-    <connection>
-      <sender>canopenPDOBinFormat</sender>
-      <signal>clicked()</signal>
-      <receiver>form1</receiver>
-      <slot>canopenPDOBinClicked()</slot>
-    </connection>
-    <connection>
-      <sender>canopenPDODecFormat</sender>
-      <signal>clicked()</signal>
-      <receiver>form1</receiver>
-      <slot>canopenPDODecClicked()</slot>
-    </connection>
-    <connection>
-      <sender>canopenSDOHexFormat</sender>
-      <signal>clicked()</signal>
-      <receiver>form1</receiver>
-      <slot>canopenSDOHexClicked()</slot>
-    </connection>
-    <connection>
-      <sender>canopenSDOBinFormat</sender>
-      <signal>clicked()</signal>
-      <receiver>form1</receiver>
-      <slot>canopenSDOBinClicked()</slot>
-    </connection>
-    <connection>
-      <sender>canopenSDODecFormat</sender>
-      <signal>clicked()</signal>
-      <receiver>form1</receiver>
-      <slot>canopenSDODecClicked()</slot>
-    </connection>
-    <connection>
-      <sender>canopenDictHexFormat</sender>
-      <signal>clicked()</signal>
-      <receiver>form1</receiver>
-      <slot>canopenDictHexClicked()</slot>
-    </connection>
-    <connection>
-      <sender>canopenDictBinFormat</sender>
-      <signal>clicked()</signal>
-      <receiver>form1</receiver>
-      <slot>canopenDictBinClicked()</slot>
-    </connection>
-    <connection>
-      <sender>canopenDictDecFormat</sender>
-      <signal>clicked()</signal>
-      <receiver>form1</receiver>
-      <slot>canopenDictDecClicked()</slot>
-    </connection>
-    <connection>
-      <sender>readDictEntry</sender>
-      <signal>clicked()</signal>
-      <receiver>form1</receiver>
-      <slot>canopenDictRead()</slot>
-    </connection>
-    <connection>
-      <sender>writeDictEntry</sender>
-      <signal>clicked()</signal>
-      <receiver>form1</receiver>
-      <slot>canopenDictWrite()</slot>
-    </connection>
-    <connection>
-      <sender>viewTransferTableButton</sender>
-      <signal>clicked()</signal>
-      <receiver>form1</receiver>
-      <slot>viewTransferTable()</slot>
-    </connection>
-    <connection>
-      <sender>canopenPVarHexFormat</sender>
-      <signal>clicked()</signal>
-      <receiver>form1</receiver>
-      <slot>canopenPVarHexClicked()</slot>
-    </connection>
-    <connection>
-      <sender>canopenPVarBinFormat</sender>
-      <signal>clicked()</signal>
-      <receiver>form1</receiver>
-      <slot>canopenPVarBinClicked()</slot>
-    </connection>
-    <connection>
-      <sender>canopenPVarDecFormat</sender>
-      <signal>clicked()</signal>
-      <receiver>form1</receiver>
-      <slot>canopenPVarDecClicked()</slot>
-    </connection>
-    <connection>
-      <sender>writePVarButton</sender>
-      <signal>clicked()</signal>
-      <receiver>form1</receiver>
-      <slot>canopenPVarWrite()</slot>
-    </connection>
-    <connection>
-      <sender>downloadPVarButton</sender>
-      <signal>clicked()</signal>
-      <receiver>form1</receiver>
-      <slot>canopenPVarDownload()</slot>
-    </connection>
-    <connection>
-      <sender>showPVarButton</sender>
-      <signal>clicked()</signal>
-      <receiver>form1</receiver>
-      <slot>canopenPVarShow()</slot>
-    </connection>
-    <connection>
-      <sender>readCanButton</sender>
-      <signal>clicked()</signal>
-      <receiver>form1</receiver>
-      <slot>readCan()</slot>
-    </connection>
-    <connection>
-      <sender>PushButton65</sender>
-      <signal>clicked()</signal>
-      <receiver>form1</receiver>
-      <slot>clearCanReceiveLog()</slot>
-    </connection>
-    <connection>
-      <sender>SimulationYesRadioButton</sender>
-      <signal>clicked()</signal>
-      <receiver>form1</receiver>
-      <slot>simulationYes()</slot>
-    </connection>
-    <connection>
-      <sender>clearCANopenLogButton</sender>
-      <signal>clicked()</signal>
-      <receiver>form1</receiver>
-      <slot>clearCANSentLog()</slot>
-    </connection>
-    <connection>
-      <sender>initModuleButton</sender>
-      <signal>clicked()</signal>
-      <receiver>form1</receiver>
-      <slot>initModule()</slot>
-    </connection>
-  </connections>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupBox_3">
+     <property name="title">
+      <string>Message Log</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_7">
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_6">
+        <item>
+         <spacer name="horizontalSpacer_2">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QPushButton" name="clearCANopenLogButton">
+          <property name="text">
+           <string>Clear Can send messages</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="Q3TextView" name="canLogView" native="true">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="dragAutoScroll" stdset="0">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupBox_4">
+     <property name="title">
+      <string>Receive messages</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_8">
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_5">
+        <item>
+         <spacer name="horizontalSpacer">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QPushButton" name="PushButton65">
+          <property name="text">
+           <string>C&amp;lear</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="Q3TextView" name="canReceiveLog" native="true">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <pixmapfunction>qPixmapFromMimeSource</pixmapfunction>
+ <customwidgets>
+  <customwidget>
+   <class>Q3TextView</class>
+   <extends>QWidget</extends>
+   <header>q3textview.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>clearCANopenLogButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainGui</receiver>
+   <slot>clearCANSentLog()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>20</x>
+     <y>20</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>20</x>
+     <y>20</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

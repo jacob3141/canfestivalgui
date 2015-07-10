@@ -43,7 +43,7 @@
 #include <qpushbutton.h>
 #include <qbuttongroup.h>
 
-
+#include "ui_maingui.h"
 
 /*********************************************************************************************
 / the following lines are for using the canopenmatic library, which is a C library...
@@ -197,59 +197,59 @@ CANFestivalGui::CANFestivalGui()
 
     // fills the "helper"-lists with their childs...
     // this helper-lists are useful to perform operations which are for every datafield. (e.g. set them to 0)
-    canopenPDODataList.append( canopenPDOData0 );
-    canopenPDODataList.append( canopenPDOData1 );
-    canopenPDODataList.append( canopenPDOData2 );
-    canopenPDODataList.append( canopenPDOData3 );
-    canopenPDODataList.append( canopenPDOData4 );
-    canopenPDODataList.append( canopenPDOData5 );
-    canopenPDODataList.append( canopenPDOData6 );
-    canopenPDODataList.append( canopenPDOData7 );
+    canopenPDODataList.append( ui->canopenPDOData0 );
+    canopenPDODataList.append( ui->canopenPDOData1 );
+    canopenPDODataList.append( ui->canopenPDOData2 );
+    canopenPDODataList.append( ui->canopenPDOData3 );
+    canopenPDODataList.append( ui->canopenPDOData4 );
+    canopenPDODataList.append( ui->canopenPDOData5 );
+    canopenPDODataList.append( ui->canopenPDOData6 );
+    canopenPDODataList.append( ui->canopenPDOData7 );
 
-    canopenSDODataList.append( canopenSDOData1 );
-    canopenSDODataList.append( canopenSDOData2 );
-    canopenSDODataList.append( canopenSDOData3 );
-    canopenSDODataList.append( canopenSDOData4 );
-    canopenSDODataList.append( canopenSDOData5 );
-    canopenSDODataList.append( canopenSDOData6 );
-    canopenSDODataList.append( canopenSDOData7 );
+    canopenSDODataList.append( ui->canopenSDOData1 );
+    canopenSDODataList.append( ui->canopenSDOData2 );
+    canopenSDODataList.append( ui->canopenSDOData3 );
+    canopenSDODataList.append( ui->canopenSDOData4 );
+    canopenSDODataList.append( ui->canopenSDOData5 );
+    canopenSDODataList.append( ui->canopenSDOData6 );
+    canopenSDODataList.append( ui->canopenSDOData7 );
 
-    canopenDictDataList.append( canopenDictData0 );
-    canopenDictDataList.append( canopenDictData1 );
-    canopenDictDataList.append( canopenDictData2 );
-    canopenDictDataList.append( canopenDictData3 );
-    canopenDictDataList.append( canopenDictData4 );
-    canopenDictDataList.append( canopenDictData5 );
-    canopenDictDataList.append( canopenDictData6 );
-    canopenDictDataList.append( canopenDictData7 );
-    canopenDictDataList.append( canopenDictData8 );
-    canopenDictDataList.append( canopenDictData9 );
-    canopenDictDataList.append( canopenDictData10 );
-    canopenDictDataList.append( canopenDictData11 );
-    canopenDictDataList.append( canopenDictData12 );
-    canopenDictDataList.append( canopenDictData13 );
-    canopenDictDataList.append( canopenDictData14 );
+    canopenDictDataList.append( ui->canopenDictData0 );
+    canopenDictDataList.append( ui->canopenDictData1 );
+    canopenDictDataList.append( ui->canopenDictData2 );
+    canopenDictDataList.append( ui->canopenDictData3 );
+    canopenDictDataList.append( ui->canopenDictData4 );
+    canopenDictDataList.append( ui->canopenDictData5 );
+    canopenDictDataList.append( ui->canopenDictData6 );
+    canopenDictDataList.append( ui->canopenDictData7 );
+    canopenDictDataList.append( ui->canopenDictData8 );
+    canopenDictDataList.append( ui->canopenDictData9 );
+    canopenDictDataList.append( ui->canopenDictData10 );
+    canopenDictDataList.append( ui->canopenDictData11 );
+    canopenDictDataList.append( ui->canopenDictData12 );
+    canopenDictDataList.append( ui->canopenDictData13 );
+    canopenDictDataList.append( ui->canopenDictData14 );
 
-    canopenPVarDataList.append( canopenPVarData0 );
-    canopenPVarDataList.append( canopenPVarData1 );
-    canopenPVarDataList.append( canopenPVarData2 );
-    canopenPVarDataList.append( canopenPVarData3 );
-    canopenPVarDataList.append( canopenPVarData4 );
-    canopenPVarDataList.append( canopenPVarData5 );
-    canopenPVarDataList.append( canopenPVarData6 );
-    canopenPVarDataList.append( canopenPVarData7 );
+    canopenPVarDataList.append( ui->canopenPVarData0 );
+    canopenPVarDataList.append( ui->canopenPVarData1 );
+    canopenPVarDataList.append( ui->canopenPVarData2 );
+    canopenPVarDataList.append( ui->canopenPVarData3 );
+    canopenPVarDataList.append( ui->canopenPVarData4 );
+    canopenPVarDataList.append( ui->canopenPVarData5 );
+    canopenPVarDataList.append( ui->canopenPVarData6 );
+    canopenPVarDataList.append( ui->canopenPVarData7 );
 
-    canDataList.append( canData0 );
-    canDataList.append( canData1 );
-    canDataList.append( canData2 );
-    canDataList.append( canData3 );
-    canDataList.append( canData4 );
-    canDataList.append( canData5 );
-    canDataList.append( canData6 );
-    canDataList.append( canData7 );
+    canDataList.append( ui->canData0 );
+    canDataList.append( ui->canData1 );
+    canDataList.append( ui->canData2 );
+    canDataList.append( ui->canData3 );
+    canDataList.append( ui->canData4 );
+    canDataList.append( ui->canData5 );
+    canDataList.append( ui->canData6 );
+    canDataList.append( ui->canData7 );
 
     // sends the pointer of the logwindow to the non-gui code (see above)
-    setWindowParams( canLogView );
+    setWindowParams( ui->canLogView );
 
     // init the module (load candriver & open canport)
     initModule( );
@@ -292,20 +292,21 @@ void CANFestivalGui::initModule( )
             return;
         }
 
-        initModuleButton->setText( "&De-Initialize CANPort" );
+        ui->initModuleButton->setText( "&De-Initialize CANPort" );
         // set simulation mode to false, so real CAN message can be transmitted/received
         simulation = false;
         setSimulation( simulation );
         // start log thread, which receives and shows all can messages (sniffer)
-        mLogThread = new LogThread( canReceiveLog, this );
+        mLogThread = new LogThread( ui->canReceiveLog, this );
         mLogThread->start( );
     }
     else
     {   // unload driver module and close canport
         // stop logging thread (it would be useless in simulation mode)
-        mLogThread->stop( );
-        mLogThread = NULL;
-
+        if(mLogThread) {
+            mLogThread->stop( );
+            mLogThread = NULL;
+        }
         // close device
         if( closeDevice( ) < 0 )
             QMessageBox::information( this, "CANFestival GUI", "The CANport couln't be closed" );
@@ -314,7 +315,7 @@ void CANFestivalGui::initModule( )
         system( "/sbin/modprobe -r arbracan" );
 
         // gui things
-        initModuleButton->setText( "&Initialize CANPort" );
+        ui->initModuleButton->setText( "&Initialize CANPort" );
         driverLoaded = false;
 
         // set simulation mode to true
@@ -351,9 +352,9 @@ void CANFestivalGui::sendCan( )
     unsigned char data[8];
     int ID;
 
-    if( canCountOfByteActiv->isChecked( ) )
+    if( ui->canCountOfByteActiv->isChecked( ) )
     {   // the user has given a message length ( from 0 up to 8 bytes)
-        m.len = canCountOfByte->text( ).toInt( );
+        m.len = ui->canCountOfByte->text( ).toInt( );
     }
     else
     {   // the length of the value is calculated automatically
@@ -363,9 +364,9 @@ void CANFestivalGui::sendCan( )
     // converts the data written in the gui to integer values (remember: the gui is able to
     // handle hex, decimal and binary values
     for( int i=0; i<m.len; i++ ) {
-        if( canHexFormat->isChecked( ) ) {
+        if( ui->canHexFormat->isChecked( ) ) {
             data[i] = strtol( canDataList.at( i )->text( ).toStdString().c_str(), NULL, 16 );
-        } else if( canBinFormat->isChecked( ) ) {
+        } else if( ui->canBinFormat->isChecked( ) ) {
             data[i] = strtol( canDataList.at( i )->text( ).toStdString().c_str(), NULL, 2 );
         } else {
             data[i] = canDataList.at( i )->text( ).toInt( );
@@ -373,17 +374,17 @@ void CANFestivalGui::sendCan( )
     }
 
     // converts the can identifier into decimal data
-    if( canHexFormat->isChecked( ) ) {
-        ID = strtol( canIdentifier->text( ).toStdString().c_str(), NULL, 16 );
-    } else if( canBinFormat->isChecked( ) ) {
-        ID = strtol( canIdentifier->text( ).toStdString().c_str(), NULL, 2 );
+    if( ui->canHexFormat->isChecked( ) ) {
+        ID = strtol( ui->canIdentifier->text( ).toStdString().c_str(), NULL, 16 );
+    } else if( ui->canBinFormat->isChecked( ) ) {
+        ID = strtol( ui->canIdentifier->text( ).toStdString().c_str(), NULL, 2 );
     } else {
-        ID = canIdentifier->text( ).toInt( );
+        ID = ui->canIdentifier->text( ).toInt( );
     }
     m.cob_id.w = ID;
 
     // sets the RTR bit (retrieve bit)
-    if( canRTR->isChecked( ) ) {
+    if( ui->canRTR->isChecked( ) ) {
         m.rtr = 0x01;
     } else {
         m.rtr = 0x00;
@@ -410,29 +411,29 @@ void CANFestivalGui::sendNMT( )
 
     // corresponding to the choosen nmt-command, fill in the correct data into the can-message
     // struct
-    if( nmtState->currentText( ).compare( "Start Remote Node" ) == 0 )
+    if( ui->nmtState->currentText( ).compare( "Start Remote Node" ) == 0 )
     {
         data[0] = 0x01;
     }
-    else if( nmtState->currentText( ).compare( "Stop Remote Node" ) == 0 )
+    else if( ui->nmtState->currentText( ).compare( "Stop Remote Node" ) == 0 )
     {
         data[0] = 0x02;
     }
-    else if( nmtState->currentText( ).compare( "Pre Operational State" ) == 0 )
+    else if( ui->nmtState->currentText( ).compare( "Pre Operational State" ) == 0 )
     {
         data[0] = (int)128;
     }
-    else if( nmtState->currentText( ).compare( "Reset Node" ) == 0 )
+    else if( ui->nmtState->currentText( ).compare( "Reset Node" ) == 0 )
     {
         data[0] = (int)129;
     }
-    else if( nmtState->currentText( ).compare( "Reset Communication" ) == 0 )
+    else if( ui->nmtState->currentText( ).compare( "Reset Communication" ) == 0 )
     {
         data[0] = (int)130;
     }
 
     // get the can-identifier. (0 means: for all slaves)
-    ID = canopenNMTDeviceId->text( ).toInt( );
+    ID = ui->canopenNMTDeviceId->text( ).toInt( );
 
     // send the data to the canopenmatic function Send_NMT which does some conversions and
     // sends the message on the can-bus
@@ -463,11 +464,11 @@ void CANFestivalGui::sendPDO( )
     s_PDO pdo;
 
     // gets the id and the datalength
-    pdo.ID = canopenPDODeviceId->text( ).toInt( );
+    pdo.ID = ui->canopenPDODeviceId->text( ).toInt( );
     pdo.len = getLength( canopenPDODataList );
 
     // gets the direction. pdos can be sent and received (if supported by the slave)
-    if( canopenPDOReadWrite->isChecked( ) == true )
+    if( ui->canopenPDOReadWrite->isChecked( ) == true )
         msgd = Tx;
     else
         msgd = Rx;
@@ -475,9 +476,9 @@ void CANFestivalGui::sendPDO( )
     // copies the data from the gui into a temporary datafield. conversion from hex/bin to decimal are
     // also done if neccessary
     for( int i=0; i<pdo.len; i++ ) {
-        if( canopenPDOHexFormat->isChecked( ) ) {
+        if( ui->canopenPDOHexFormat->isChecked( ) ) {
             data[i] = strtol( canopenPDODataList.at( i )->text( ).toStdString().c_str(), NULL, 16 );
-        } else if( canopenPDOBinFormat->isChecked( ) ) {
+        } else if( ui->canopenPDOBinFormat->isChecked( ) ) {
             data[i] = strtol( canopenPDODataList.at( i )->text( ).toStdString().c_str(), NULL, 2 );
         } else {
             data[i] = canopenPDODataList.at( i )->text( ).toInt( );
@@ -504,44 +505,44 @@ void CANFestivalGui::sendSDO( )
     unsigned char data[8];
 
     s_SDO sdo;
-    sdo.ID = canopenSDODeviceId->text( ).toInt( );
+    sdo.ID = ui->canopenSDODeviceId->text( ).toInt( );
     // + 1 wegen dem Command Specifier...
     sdo.len = getLength( canopenSDODataList ) + 1;
-    if( canopenSDOReadWrite->isChecked( ) == true ) {
+    if( ui->canopenSDOReadWrite->isChecked( ) == true ) {
         msgd = Rx;
     } else {
         msgd = Tx;
     }
 
     n = 8 - (sdo.len-1);
-    canopenSDONormal->isChecked( ) ? e=0: e=1;
+    ui->canopenSDONormal->isChecked( ) ? e=0: e=1;
     s = 0; // !!!!!!!!!!! was isch das ueberhaupt?!
     t = 0; // !!!!!!!!!!! fix this...
     c = 1; // should also be changed !!!!!!!!!!!!
 
-    if( canopenSDOCommandSpecifier->currentText( ).compare( "Init Domain Download" ) == 0 ) {
+    if( ui->canopenSDOCommandSpecifier->currentText( ).compare( "Init Domain Download" ) == 0 ) {
         if( msgd == Tx ) {
             data[0] = IDD_client( n, e, s );
         } else {
             data[0] = IDD_server;
         }
-    } else if( canopenSDOCommandSpecifier->currentText( ).compare( "Download Domain Segment" ) == 0 ) {
+    } else if( ui->canopenSDOCommandSpecifier->currentText( ).compare( "Download Domain Segment" ) == 0 ) {
         if( msgd == Tx ) {
             data[0] = DDS_client( t, n, c );
         } else {
             data[0] = DDS_server;
         }
-    } else if( canopenSDOCommandSpecifier->currentText( ).compare( "Init Domain Upload" ) == 0 ) {
+    } else if( ui->canopenSDOCommandSpecifier->currentText( ).compare( "Init Domain Upload" ) == 0 ) {
         QMessageBox::information( this, "kdsfjsl", "lauft no nued..." );
-    } else if( canopenSDOCommandSpecifier->currentText( ).compare( "Upload Domain Segment" ) == 0 ) {
+    } else if( ui->canopenSDOCommandSpecifier->currentText( ).compare( "Upload Domain Segment" ) == 0 ) {
         QMessageBox::information( this, "kdsfjsl", "lauft no nued..." );
-    } else if( canopenSDOCommandSpecifier->currentText( ).compare( "Abort Domain Transfer" ) == 0 ) {
+    } else if( ui->canopenSDOCommandSpecifier->currentText( ).compare( "Abort Domain Transfer" ) == 0 ) {
         data[0] = ADT_server;
     }
     for( int i=1; i<sdo.len-1; i++ ) {
-        if( canopenSDOHexFormat->isChecked( ) ) {
+        if( ui->canopenSDOHexFormat->isChecked( ) ) {
             data[i] = strtol( canopenSDODataList.at( i-1 )->text( ).toStdString().c_str(), NULL, 16 );
-        } else if( canopenSDOBinFormat->isChecked( ) ) {
+        } else if( ui->canopenSDOBinFormat->isChecked( ) ) {
             data[i] = strtol( canopenSDODataList.at( i-1 )->text( ).toStdString().c_str(), NULL, 2 );
         } else {
             data[i] = canopenSDODataList.at( i-1 )->text( ).toInt( );
@@ -567,9 +568,9 @@ void CANFestivalGui::canopenDictWrite( )
 
     // converts the data-values from the gui into integer values
     for( int i=0; i<getLength( canopenDictDataList ); i++ ) {
-        if( canopenDictHexFormat->isChecked( ) ) {
+        if( ui->canopenDictHexFormat->isChecked( ) ) {
             data[i] = strtol( canopenDictDataList.at( i )->text( ).toStdString().c_str(), NULL, 16 );
-        } else if( canopenDictBinFormat->isChecked( ) ) {
+        } else if( ui->canopenDictBinFormat->isChecked( ) ) {
             data[i] = strtol( canopenDictDataList.at( i )->text( ).toStdString().c_str(), NULL, 2 );
         } else {
             data[i] = canopenDictDataList.at( i )->text( ).toInt( );
@@ -577,26 +578,26 @@ void CANFestivalGui::canopenDictWrite( )
     }
 
     // gets and converts the index number of the entry
-    if( canopenDictHexFormat->isChecked( ) ) {
-        tempIndex = strtol( canopenDictIndex->text( ).toStdString().c_str(), NULL, 16 );
-    } else if( canopenDictBinFormat->isChecked( ) ) {
-        tempIndex = strtol( canopenDictIndex->text( ).toStdString().c_str(), NULL, 2 );
+    if( ui->canopenDictHexFormat->isChecked( ) ) {
+        tempIndex = strtol( ui->canopenDictIndex->text( ).toStdString().c_str(), NULL, 16 );
+    } else if( ui->canopenDictBinFormat->isChecked( ) ) {
+        tempIndex = strtol( ui->canopenDictIndex->text( ).toStdString().c_str(), NULL, 2 );
     } else {
-        tempIndex = canopenDictIndex->text( ).toInt( );
+        tempIndex = ui->canopenDictIndex->text( ).toInt( );
     }
 
     // gets and converts the subindex number of the entry
-    if( canopenDictHexFormat->isChecked( ) ) {
-        tempSubIndex = strtol( canopenDictSubIndex->text( ).toStdString().c_str(), NULL, 16 );
-    } else if( canopenDictBinFormat->isChecked( ) ) {
-        tempSubIndex = strtol( canopenDictSubIndex->text( ).toStdString().c_str(), NULL, 2 );
+    if( ui->canopenDictHexFormat->isChecked( ) ) {
+        tempSubIndex = strtol( ui->canopenDictSubIndex->text( ).toStdString().c_str(), NULL, 16 );
+    } else if( ui->canopenDictBinFormat->isChecked( ) ) {
+        tempSubIndex = strtol( ui->canopenDictSubIndex->text( ).toStdString().c_str(), NULL, 2 );
     } else {
-        tempSubIndex = canopenDictSubIndex->text( ).toInt( );
+        tempSubIndex = ui->canopenDictSubIndex->text( ).toInt( );
     }
 
     // calls the canopenmatic function which does the rest for us... including sending the can-message
     WriteDictionaryEntry(0,
-                         canopenDictDeviceId->text( ).toInt( ),
+                         ui->canopenDictDeviceId->text( ).toInt( ),
                          tempIndex,
                          tempSubIndex,
                          getLength( canopenDictDataList ),
@@ -633,21 +634,21 @@ void CANFestivalGui::canopenDictRead( )
 //    }
 
     // gets and converts the indexnumber of the dictionary entry
-    if( canopenDictHexFormat->isChecked( ) ) {
-        tempIndex = strtol( canopenDictIndex->text( ).toStdString().c_str(), NULL, 16 );
-    } else if( canopenDictBinFormat->isChecked( ) ) {
-        tempIndex = strtol( canopenDictIndex->text( ).toStdString().c_str(), NULL, 2 );
+    if( ui->canopenDictHexFormat->isChecked( ) ) {
+        tempIndex = strtol( ui->canopenDictIndex->text( ).toStdString().c_str(), NULL, 16 );
+    } else if( ui->canopenDictBinFormat->isChecked( ) ) {
+        tempIndex = strtol( ui->canopenDictIndex->text( ).toStdString().c_str(), NULL, 2 );
     } else {
-        tempIndex = canopenDictIndex->text( ).toInt( );
+        tempIndex = ui->canopenDictIndex->text( ).toInt( );
     }
 
     // gets and converts the subindexnumber of the dictionary entry
-    if( canopenDictHexFormat->isChecked( ) ) {
-        tempSubIndex = strtol( canopenDictSubIndex->text( ).toStdString().c_str(), NULL, 16 );
-    } else if( canopenDictBinFormat->isChecked( ) ) {
-        tempSubIndex = strtol( canopenDictSubIndex->text( ).toStdString().c_str(), NULL, 2 );
+    if( ui->canopenDictHexFormat->isChecked( ) ) {
+        tempSubIndex = strtol( ui->canopenDictSubIndex->text( ).toStdString().c_str(), NULL, 16 );
+    } else if( ui->canopenDictBinFormat->isChecked( ) ) {
+        tempSubIndex = strtol( ui->canopenDictSubIndex->text( ).toStdString().c_str(), NULL, 2 );
     } else {
-        tempSubIndex = canopenDictSubIndex->text( ).toInt( );
+        tempSubIndex = ui->canopenDictSubIndex->text( ).toInt( );
     }
 
     // temporary stops the thread which sniffes the can-bus (this thread reads all received can-bus
@@ -660,7 +661,7 @@ void CANFestivalGui::canopenDictRead( )
 
     // calls the function of canopenmatic which performs the rest for us...
     if( ReadDictionaryEntry( 0,
-                         canopenDictDeviceId->text( ).toInt( ),
+                         ui->canopenDictDeviceId->text( ).toInt( ),
                          tempIndex,
                          tempSubIndex,
                          data ) == 0 )
@@ -708,9 +709,9 @@ void CANFestivalGui::canopenPVarRead( )
 
     // gets and converts the data from the gui
     for( int i=0; i<getLength( canopenPVarDataList ); i++ ) {
-        if( canopenPVarHexFormat->isChecked( ) ) {
+        if( ui->canopenPVarHexFormat->isChecked( ) ) {
             data[i] = strtol( canopenPVarDataList.at( i )->text( ).toStdString().c_str(), NULL, 16 );
-        } else if( canopenPVarBinFormat->isChecked( ) ) {
+        } else if( ui->canopenPVarBinFormat->isChecked( ) ) {
             data[i] = strtol( canopenPVarDataList.at( i )->text( ).toStdString().c_str(), NULL, 2 );
         } else {
             data[i] = canopenPVarDataList.at( i )->text( ).toInt( );
@@ -718,7 +719,7 @@ void CANFestivalGui::canopenPVarRead( )
     }
 
     // gets the length of data
-    len = ReadProcessVar( 0, canopenPVarDeviceId->text( ).toInt( ), data);
+    len = ReadProcessVar( 0, ui->canopenPVarDeviceId->text( ).toInt( ), data);
 
     QString intValue = "Int: ";
     QString textValue = "Text: ";
@@ -746,13 +747,13 @@ void CANFestivalGui::canopenPVarWrite( )
     char data[8];
 
     // check wheter the variable should be sent immediatly or later...
-    canopenPVarNow->isChecked( )? sendTime=NOW : sendTime=LATER;
+    ui->canopenPVarNow->isChecked( )? sendTime=NOW : sendTime=LATER;
 
     // gets and converts the data from the gui
     for( int i=0; i<getLength( canopenPVarDataList ); i++ ) {
-        if( canopenPVarHexFormat->isChecked( ) ) {
+        if( ui->canopenPVarHexFormat->isChecked( ) ) {
             data[i] = strtol( canopenPVarDataList.at( i )->text( ).toStdString().c_str(), NULL, 16 );
-        } else if( canopenPVarBinFormat->isChecked( ) ) {
+        } else if( ui->canopenPVarBinFormat->isChecked( ) ) {
             data[i] = strtol( canopenPVarDataList.at( i )->text( ).toStdString().c_str(), NULL, 2 );
         } else {
             data[i] = canopenPVarDataList.at( i )->text( ).toInt( );
@@ -764,7 +765,7 @@ void CANFestivalGui::canopenPVarWrite( )
         mLogThread->getSem( );
     // call the canopenmatic function which does the rest for us
     WriteProcessVar( sendTime, 0,
-                    canopenPVarDeviceId->text( ).toInt( ),
+                    ui->canopenPVarDeviceId->text( ).toInt( ),
                     getLength( canopenPVarDataList ),
                     data);
     // continues the log thread
@@ -846,7 +847,7 @@ int CANFestivalGui::openDevice( )
     if( fd < 0 )
     {
         // copies the port number from the gui into the string
-        sprintf( busname, "%s%i", "/dev/can", canPort->text( ).toInt( ) );
+        sprintf( busname, "%s%i", "/dev/can", ui->canPort->text( ).toInt( ) );
         if( ( fd = f_can_open( busname ) ) < 0 )  {
             QMessageBox::information( this, "CANFestival GUI",
                             "couln't open CAN Device" );
@@ -878,10 +879,10 @@ int CANFestivalGui::closeDevice( )
 void CANFestivalGui::simulationNo( )
 {
     // some gui things
-    canPortLabel->setEnabled( true );
-    canPort->setEnabled( true );
-    initModuleButton->setEnabled( true );
-    SimulationNoRadioButton->setChecked( true );
+    ui->canPortLabel->setEnabled( true );
+    ui->canPort->setEnabled( true );
+    ui->initModuleButton->setEnabled( true );
+    ui->SimulationNoRadioButton->setChecked( true );
 }
 
 
@@ -893,10 +894,10 @@ void CANFestivalGui::simulationNo( )
 //------------------------------------------------------------------------------------------*/
 void CANFestivalGui::simulationYes( )
 {
-    canPortLabel->setEnabled( false );
-    canPort->setEnabled( false );
-    initModuleButton->setEnabled( false );
-    SimulationYesRadioButton->setChecked( true );
+    ui->canPortLabel->setEnabled( false );
+    ui->canPort->setEnabled( false );
+    ui->initModuleButton->setEnabled( false );
+    ui->SimulationYesRadioButton->setChecked( true );
 
     // does the rest: closes the connection to the canport and unload can-pci board driver
     initModule( );
@@ -939,11 +940,11 @@ void CANFestivalGui::canopenDictBinClicked( )
 {
     QList<QLineEdit*> tempList;
 
-    tempList.append( canopenDictIndex );
+    tempList.append( ui->canopenDictIndex );
     toBin( &tempList, canopenDictPrevDataType, 16 );
 
     tempList.clear( );
-    tempList.append( canopenDictSubIndex);
+    tempList.append( ui->canopenDictSubIndex);
     toBin( &tempList, canopenDictPrevDataType, 8 );
 
     toBin( &canopenDictDataList, canopenDictPrevDataType, 8 );
@@ -957,11 +958,11 @@ void CANFestivalGui::canopenDictDecClicked( )
 {
     QList<QLineEdit*> tempList;
 
-    tempList.append( canopenDictIndex );
+    tempList.append( ui->canopenDictIndex );
     toDec( &tempList, canopenDictPrevDataType, 5 );
 
     tempList.clear( );
-    tempList.append( canopenDictSubIndex);
+    tempList.append( ui->canopenDictSubIndex);
     toDec( &tempList, canopenDictPrevDataType, 3 );
 
     toDec( &canopenDictDataList, canopenDictPrevDataType, 3 );
@@ -974,11 +975,11 @@ void CANFestivalGui::canopenDictHexClicked( )
 {
     QList<QLineEdit*> tempList;
 
-    tempList.append( canopenDictIndex );
+    tempList.append( ui->canopenDictIndex );
     toHex( &tempList, canopenDictPrevDataType, 6 );
 
     tempList.clear( );
-    tempList.append( canopenDictSubIndex);
+    tempList.append( ui->canopenDictSubIndex);
     toHex( &tempList, canopenDictPrevDataType, 4 );
 
     toHex( &canopenDictDataList, canopenDictPrevDataType, 4 );
@@ -991,7 +992,7 @@ void CANFestivalGui::canBINClicked( )
 {
     QList<QLineEdit*>    tempList;
 
-    tempList.append( canIdentifier );
+    tempList.append( ui->canIdentifier );
 
     toBin( &canDataList, canPrevDataType, 8 );
     toBin( &tempList, canPrevDataType, 11 );
@@ -1004,7 +1005,7 @@ void CANFestivalGui::canHEXClicked( )
 {
     QList<QLineEdit*>    tempList;
 
-    tempList.append( canIdentifier );
+    tempList.append( ui->canIdentifier );
 
     toHex( &canDataList, canPrevDataType, 8 );
     toHex( &tempList, canPrevDataType, 11 );
@@ -1017,7 +1018,7 @@ void CANFestivalGui::canDECClicked( )
 {
     QList<QLineEdit*>    tempList;
 
-    tempList.append( canIdentifier );
+    tempList.append( ui->canIdentifier );
 
     toDec( &canDataList, canPrevDataType, 8 );
     toDec( &tempList, canPrevDataType, 11 );
@@ -1126,11 +1127,11 @@ void CANFestivalGui::toDec( QList<QLineEdit*>* theList, int prevState, int textL
 
 void CANFestivalGui::clearCANSentLog( )
 {
-    canLogView->setText( QString( ) );
+    ui->canLogView->setText( QString( ) );
 }
 
 
 void CANFestivalGui::clearCanReceiveLog( )
 {
-    canReceiveLog->setText( "" );
+    ui->canReceiveLog->setText( "" );
 }
