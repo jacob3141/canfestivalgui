@@ -18,11 +18,11 @@
 #include "logthread.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include <iostream.h>
+#include <iostream>
 #include <qevent.h>
 #include <qpoint.h>
 
-LogThread::LogThread( QTextView* logView, CANFestivalGui* theGui )
+LogThread::LogThread( Q3TextView* logView, CANFestivalGui* theGui )
 {
     mCanReceiveLog = logView;
     mGui = theGui;
@@ -55,7 +55,7 @@ void LogThread::run( )
                 tempData.append( text );
             }
             tempData.truncate( tempData.length( ) - 1 );
-            mCanReceiveLog->append( QString::QString( ).sprintf( "Received Message (hex): CAN-ID %4x     Data: %s", m.cob_id.w, tempData.latin1( ) ) );
+            mCanReceiveLog->append( QString( ).sprintf( "Received Message (hex): CAN-ID %4x     Data: %s", m.cob_id.w, tempData.toLatin1().constData() ) );
             // it seams theres a BUG! with these 4 operations the content is shown correctly... BUT: if too much
             // inputs from the CANbus occurs, the program may crash :-(
             // to avoid this crash, comment the following 4 lines out and recompile the program.

@@ -17,11 +17,11 @@
 
 #include "pvargui.h"
 
-#include <qheader.h>
-#include <qtable.h>
+#include <Qt3Support/Q3Header>
+#include <Qt3Support/Q3Table>
 #include <qspinbox.h>
 
-#include <iostream.h>
+#include <iostream>
 
 #include "include/Can.h"
 #include "include/ArbraCan.h"
@@ -29,7 +29,7 @@
 
 PVarGui::PVarGui()
 {
-    QHeader *header;
+    Q3Header *header;
 
     header = rxTable->horizontalHeader( );
     for( int i=0; i<2; i++ ) {

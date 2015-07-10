@@ -11,9 +11,11 @@
 
 #include <qvariant.h>
 #include <qwidget.h>
-class QVBoxLayout; 
-class QHBoxLayout; 
-class QGridLayout; 
+#include <Qt3Support/Q3TextView>
+
+class QVBoxLayout;
+class QHBoxLayout;
+class QGridLayout;
 class QButtonGroup;
 class QCheckBox;
 class QComboBox;
@@ -24,14 +26,14 @@ class QPushButton;
 class QRadioButton;
 class QSpinBox;
 class QTabWidget;
-class QTextView;
+class Q3TextView;
 
 class MainGui : public QWidget
-{ 
+{
     Q_OBJECT
 
 public:
-    MainGui( QWidget* parent = 0, const char* name = 0, WFlags fl = 0 );
+    MainGui( QWidget* parent = 0, const char* name = 0, Qt::WindowFlags fl = 0 );
     ~MainGui();
 
     QGroupBox* GroupBox1;
@@ -44,10 +46,10 @@ public:
     QGroupBox* datalog;
     QPushButton* clearCANopenLogButton;
     QGroupBox* canMessageLogBox;
-    QTextView* canLogView;
+    Q3TextView* canLogView;
     QGroupBox* GroupBox11;
     QPushButton* PushButton65;
-    QTextView* canReceiveLog;
+    Q3TextView* canReceiveLog;
     QGroupBox* sendMessagesBox;
     QTabWidget* TabWidget4;
     QWidget* tab;

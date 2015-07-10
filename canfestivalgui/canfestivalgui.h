@@ -20,7 +20,9 @@
 
 #include <maingui.h>
 
-#include <qlist.h>
+#include <QList>
+#include <QLineEdit>
+
 #include "logthread.h"
 #include "pvargui.h"
 
@@ -61,24 +63,24 @@ private:
     bool simulation;
     bool driverLoaded;
     enum {HEX, BIN, DEC};
-    QList<QLineEdit> canopenPDODataList;
-    QList<QLineEdit> canopenSDODataList;
-    QList<QLineEdit> canopenDictDataList;
-    QList<QLineEdit> canopenPVarDataList;
-    QList<QLineEdit> canDataList;
+    QList<QLineEdit*> canopenPDODataList;
+    QList<QLineEdit*> canopenSDODataList;
+    QList<QLineEdit*> canopenDictDataList;
+    QList<QLineEdit*> canopenPVarDataList;
+    QList<QLineEdit*> canDataList;
 
     LogThread* mLogThread;
 
     PVarGui*    mPVarGui;
 
     // private Memberfunctions...
-    int getLength( QList<QLineEdit>& );
+    int getLength(QList<QLineEdit *> & );
     int openDevice( );
     int closeDevice( );
 
-    void toHex( QList<QLineEdit>*, int, int );
-    void toBin( QList<QLineEdit>*, int, int );
-    void toDec( QList<QLineEdit>*, int, int );
+    void toHex( QList<QLineEdit*>*, int, int );
+    void toBin(QList<QLineEdit *> *, int, int );
+    void toDec( QList<QLineEdit*>*, int, int );
 
 public:
     CANFestivalGui();

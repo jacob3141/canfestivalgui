@@ -18,7 +18,7 @@
 #include "canfestivalgui.h"
 #include "maingui.h"
 
-#include <iostream.h>
+#include <iostream>
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -38,10 +38,8 @@
 #include <qstring.h>
 #include <qspinbox.h>
 #include <qradiobutton.h>
-#include <qlineedit.h>
 #include <qlabel.h>
 #include <qgroupbox.h>
-#include <qtextview.h>
 #include <qpushbutton.h>
 #include <qbuttongroup.h>
 
@@ -60,14 +58,14 @@ static int fd0;                     // the candevice
 static int canMsgNr=0;              // the count of sent messages
 static bool simulation = true;      // switch between: "real" can-traffic and only simulation
                                     // (e.g. for learning the canopen protocol)
-static QTextView*  canLog=0;        // a pointer to the log window. all sent messages are logged into a view on the gui
+static Q3TextView*  canLog=0;        // a pointer to the log window. all sent messages are logged into a view on the gui
 
 
 /**------------------------------------------------------------------------------------------
 // this function is called once by the gui, so the non-class members of the gui do know
 // the pointer of the log window
 //------------------------------------------------------------------------------------------*/
-void setWindowParams( QTextView* canLog_ )
+void setWindowParams( Q3TextView* canLog_ )
 {
     canLog = canLog_;
 }
@@ -133,7 +131,7 @@ int f_can_send(int notused, Message *m){
         }
         tempData.truncate( tempData.length( ) - 1 );
         // writes the can-message to the logwindow
-        canLog->append( QString::QString( ).sprintf( "%.4d> Id: %.4x RTR: %d Data: %s", canMsgNr++, m->cob_id.w, m->rtr, tempData.latin1( ) ) );
+        canLog->append( QString( ).sprintf( "%.4d> Id: %.4x RTR: %d Data: %s", canMsgNr++, m->cob_id.w, m->rtr, tempData.toLatin1().constData() ) );
         canLog->center( 0, canLog->contentsHeight( ) );
         canLog->viewport( )->repaint( );
         canLog->hide( );
@@ -163,7 +161,7 @@ int f_can_send(int notused, Message *m){
 //------------------------------------------------------------------------------------------*/
 int f_can_open( char* thebusname ){
     fd0 = open(thebusname,O_RDWR);
-	return fd0;
+    return fd0;
 }
 
 /**-------------------------------------------------------------------------------------------
@@ -299,7 +297,7 @@ void CANFestivalGui::initModule( )
         simulation = false;
         setSimulation( simulation );
         // start log thread, which receives and shows all can messages (sniffer)
-       	mLogThread = new LogThread( canReceiveLog, this );
+        mLogThread = new LogThread( canReceiveLog, this );
         mLogThread->start( );
     }
     else
@@ -366,9 +364,9 @@ void CANFestivalGui::sendCan( )
     // handle hex, decimal and binary values
     for( int i=0; i<m.len; i++ ) {
         if( canHexFormat->isChecked( ) ) {
-            data[i] = strtol( canDataList.at( i )->text( ), NULL, 16 );
+            data[i] = strtol( canDataList.at( i )->text( ).toStdString().c_str(), NULL, 16 );
         } else if( canBinFormat->isChecked( ) ) {
-            data[i] = strtol( canDataList.at( i )->text( ), NULL, 2 );
+            data[i] = strtol( canDataList.at( i )->text( ).toStdString().c_str(), NULL, 2 );
         } else {
             data[i] = canDataList.at( i )->text( ).toInt( );
         }
@@ -376,9 +374,9 @@ void CANFestivalGui::sendCan( )
 
     // converts the can identifier into decimal data
     if( canHexFormat->isChecked( ) ) {
-        ID = strtol( canIdentifier->text( ), NULL, 16 );
+        ID = strtol( canIdentifier->text( ).toStdString().c_str(), NULL, 16 );
     } else if( canBinFormat->isChecked( ) ) {
-        ID = strtol( canIdentifier->text( ), NULL, 2 );
+        ID = strtol( canIdentifier->text( ).toStdString().c_str(), NULL, 2 );
     } else {
         ID = canIdentifier->text( ).toInt( );
     }
@@ -478,9 +476,9 @@ void CANFestivalGui::sendPDO( )
     // also done if neccessary
     for( int i=0; i<pdo.len; i++ ) {
         if( canopenPDOHexFormat->isChecked( ) ) {
-            data[i] = strtol( canopenPDODataList.at( i )->text( ), NULL, 16 );
+            data[i] = strtol( canopenPDODataList.at( i )->text( ).toStdString().c_str(), NULL, 16 );
         } else if( canopenPDOBinFormat->isChecked( ) ) {
-            data[i] = strtol( canopenPDODataList.at( i )->text( ), NULL, 2 );
+            data[i] = strtol( canopenPDODataList.at( i )->text( ).toStdString().c_str(), NULL, 2 );
         } else {
             data[i] = canopenPDODataList.at( i )->text( ).toInt( );
         }
@@ -542,9 +540,9 @@ void CANFestivalGui::sendSDO( )
     }
     for( int i=1; i<sdo.len-1; i++ ) {
         if( canopenSDOHexFormat->isChecked( ) ) {
-            data[i] = strtol( canopenSDODataList.at( i-1 )->text( ), NULL, 16 );
+            data[i] = strtol( canopenSDODataList.at( i-1 )->text( ).toStdString().c_str(), NULL, 16 );
         } else if( canopenSDOBinFormat->isChecked( ) ) {
-            data[i] = strtol( canopenSDODataList.at( i-1 )->text( ), NULL, 2 );
+            data[i] = strtol( canopenSDODataList.at( i-1 )->text( ).toStdString().c_str(), NULL, 2 );
         } else {
             data[i] = canopenSDODataList.at( i-1 )->text( ).toInt( );
         }
@@ -570,9 +568,9 @@ void CANFestivalGui::canopenDictWrite( )
     // converts the data-values from the gui into integer values
     for( int i=0; i<getLength( canopenDictDataList ); i++ ) {
         if( canopenDictHexFormat->isChecked( ) ) {
-            data[i] = strtol( canopenDictDataList.at( i )->text( ), NULL, 16 );
+            data[i] = strtol( canopenDictDataList.at( i )->text( ).toStdString().c_str(), NULL, 16 );
         } else if( canopenDictBinFormat->isChecked( ) ) {
-            data[i] = strtol( canopenDictDataList.at( i )->text( ), NULL, 2 );
+            data[i] = strtol( canopenDictDataList.at( i )->text( ).toStdString().c_str(), NULL, 2 );
         } else {
             data[i] = canopenDictDataList.at( i )->text( ).toInt( );
         }
@@ -580,18 +578,18 @@ void CANFestivalGui::canopenDictWrite( )
 
     // gets and converts the index number of the entry
     if( canopenDictHexFormat->isChecked( ) ) {
-        tempIndex = strtol( canopenDictIndex->text( ), NULL, 16 );
+        tempIndex = strtol( canopenDictIndex->text( ).toStdString().c_str(), NULL, 16 );
     } else if( canopenDictBinFormat->isChecked( ) ) {
-        tempIndex = strtol( canopenDictIndex->text( ), NULL, 2 );
+        tempIndex = strtol( canopenDictIndex->text( ).toStdString().c_str(), NULL, 2 );
     } else {
         tempIndex = canopenDictIndex->text( ).toInt( );
     }
 
     // gets and converts the subindex number of the entry
     if( canopenDictHexFormat->isChecked( ) ) {
-        tempSubIndex = strtol( canopenDictSubIndex->text( ), NULL, 16 );
+        tempSubIndex = strtol( canopenDictSubIndex->text( ).toStdString().c_str(), NULL, 16 );
     } else if( canopenDictBinFormat->isChecked( ) ) {
-        tempSubIndex = strtol( canopenDictSubIndex->text( ), NULL, 2 );
+        tempSubIndex = strtol( canopenDictSubIndex->text( ).toStdString().c_str(), NULL, 2 );
     } else {
         tempSubIndex = canopenDictSubIndex->text( ).toInt( );
     }
@@ -636,18 +634,18 @@ void CANFestivalGui::canopenDictRead( )
 
     // gets and converts the indexnumber of the dictionary entry
     if( canopenDictHexFormat->isChecked( ) ) {
-        tempIndex = strtol( canopenDictIndex->text( ), NULL, 16 );
+        tempIndex = strtol( canopenDictIndex->text( ).toStdString().c_str(), NULL, 16 );
     } else if( canopenDictBinFormat->isChecked( ) ) {
-        tempIndex = strtol( canopenDictIndex->text( ), NULL, 2 );
+        tempIndex = strtol( canopenDictIndex->text( ).toStdString().c_str(), NULL, 2 );
     } else {
         tempIndex = canopenDictIndex->text( ).toInt( );
     }
 
     // gets and converts the subindexnumber of the dictionary entry
     if( canopenDictHexFormat->isChecked( ) ) {
-        tempSubIndex = strtol( canopenDictSubIndex->text( ), NULL, 16 );
+        tempSubIndex = strtol( canopenDictSubIndex->text( ).toStdString().c_str(), NULL, 16 );
     } else if( canopenDictBinFormat->isChecked( ) ) {
-        tempSubIndex = strtol( canopenDictSubIndex->text( ), NULL, 2 );
+        tempSubIndex = strtol( canopenDictSubIndex->text( ).toStdString().c_str(), NULL, 2 );
     } else {
         tempSubIndex = canopenDictSubIndex->text( ).toInt( );
     }
@@ -711,9 +709,9 @@ void CANFestivalGui::canopenPVarRead( )
     // gets and converts the data from the gui
     for( int i=0; i<getLength( canopenPVarDataList ); i++ ) {
         if( canopenPVarHexFormat->isChecked( ) ) {
-            data[i] = strtol( canopenPVarDataList.at( i )->text( ), NULL, 16 );
+            data[i] = strtol( canopenPVarDataList.at( i )->text( ).toStdString().c_str(), NULL, 16 );
         } else if( canopenPVarBinFormat->isChecked( ) ) {
-            data[i] = strtol( canopenPVarDataList.at( i )->text( ), NULL, 2 );
+            data[i] = strtol( canopenPVarDataList.at( i )->text( ).toStdString().c_str(), NULL, 2 );
         } else {
             data[i] = canopenPVarDataList.at( i )->text( ).toInt( );
         }
@@ -753,9 +751,9 @@ void CANFestivalGui::canopenPVarWrite( )
     // gets and converts the data from the gui
     for( int i=0; i<getLength( canopenPVarDataList ); i++ ) {
         if( canopenPVarHexFormat->isChecked( ) ) {
-            data[i] = strtol( canopenPVarDataList.at( i )->text( ), NULL, 16 );
+            data[i] = strtol( canopenPVarDataList.at( i )->text( ).toStdString().c_str(), NULL, 16 );
         } else if( canopenPVarBinFormat->isChecked( ) ) {
-            data[i] = strtol( canopenPVarDataList.at( i )->text( ), NULL, 2 );
+            data[i] = strtol( canopenPVarDataList.at( i )->text( ).toStdString().c_str(), NULL, 2 );
         } else {
             data[i] = canopenPVarDataList.at( i )->text( ).toInt( );
         }
@@ -816,17 +814,19 @@ void CANFestivalGui::canopenPVarShow( )
 //      such troubles, the gui supports an additional field, where the user can force to send
 //      a number of bytes (in this case 3)
 //------------------------------------------------------------------------------------------*/
-int CANFestivalGui::getLength( QList<QLineEdit>& theList )
+int CANFestivalGui::getLength( QList<QLineEdit*>& theList )
 {
     QLineEdit*  theLine;
-    uint i = theList.count( );
+    uint i = theList.length();
 
     theLine = theList.last( );
     while( ( theLine->text( ).toInt( ) == 0 ) || ( theLine->text( ).isEmpty( ) ) ) {
-        i--;
-        theLine = theList.prev( );
-        if( theLine == 0 )
+        if(i > 0) {
+            i--;
+            theLine = theList.at(i);
+        } else {
             break;
+        }
     }
 
     if( i == 0 )
@@ -937,7 +937,7 @@ void CANFestivalGui::canopenPVarHexClicked( )
 
 void CANFestivalGui::canopenDictBinClicked( )
 {
-    QList<QLineEdit> tempList;
+    QList<QLineEdit*> tempList;
 
     tempList.append( canopenDictIndex );
     toBin( &tempList, canopenDictPrevDataType, 16 );
@@ -955,7 +955,7 @@ void CANFestivalGui::canopenDictBinClicked( )
 
 void CANFestivalGui::canopenDictDecClicked( )
 {
-    QList<QLineEdit> tempList;
+    QList<QLineEdit*> tempList;
 
     tempList.append( canopenDictIndex );
     toDec( &tempList, canopenDictPrevDataType, 5 );
@@ -972,7 +972,7 @@ void CANFestivalGui::canopenDictDecClicked( )
 
 void CANFestivalGui::canopenDictHexClicked( )
 {
-    QList<QLineEdit> tempList;
+    QList<QLineEdit*> tempList;
 
     tempList.append( canopenDictIndex );
     toHex( &tempList, canopenDictPrevDataType, 6 );
@@ -989,7 +989,7 @@ void CANFestivalGui::canopenDictHexClicked( )
 
 void CANFestivalGui::canBINClicked( )
 {
-    QList<QLineEdit>    tempList;
+    QList<QLineEdit*>    tempList;
 
     tempList.append( canIdentifier );
 
@@ -1002,7 +1002,7 @@ void CANFestivalGui::canBINClicked( )
 
 void CANFestivalGui::canHEXClicked( )
 {
-    QList<QLineEdit>    tempList;
+    QList<QLineEdit*>    tempList;
 
     tempList.append( canIdentifier );
 
@@ -1015,7 +1015,7 @@ void CANFestivalGui::canHEXClicked( )
 
 void CANFestivalGui::canDECClicked( )
 {
-    QList<QLineEdit>    tempList;
+    QList<QLineEdit*>    tempList;
 
     tempList.append( canIdentifier );
 
@@ -1077,47 +1077,47 @@ void CANFestivalGui::canopenSDOHexClicked( )
 
 
 
-void CANFestivalGui::toHex( QList<QLineEdit>* theList, int prevState, int textLength )
+void CANFestivalGui::toHex(QList<QLineEdit *> *theList, int prevState, int textLength )
 {
     if( prevState == BIN ) {
         for( uint i=0; i<theList->count( ); i++ ) {
-            theList->at( i )->setText( "0x" + QString::QString( ).setNum( strtol( theList->at( i )->text( ), NULL, 2 ), 16 ) );
+            theList->at( i )->setText( "0x" + QString( ).setNum( strtol( theList->at( i )->text( ).toStdString().c_str(), NULL, 2 ), 16 ) );
             theList->at( i )->setMaxLength( textLength );
         }
     } else if( prevState == DEC ) {
         for( uint i=0; i<theList->count( ); i++ ) {
             theList->at( i )->setMaxLength( textLength );
-            theList->at( i )->setText( "0x" + QString::QString( ).setNum( theList->at( i )->text( ).toInt( ), 16 ) );
+            theList->at( i )->setText( "0x" + QString( ).setNum( theList->at( i )->text( ).toInt( ), 16 ) );
         }
     }
 }
 
-void CANFestivalGui::toBin( QList<QLineEdit>* theList, int prevState, int textLength )
+void CANFestivalGui::toBin( QList<QLineEdit*>* theList, int prevState, int textLength )
 {
     for( uint i=0; i<theList->count( ); i++ ) {
         theList->at( i )->setMaxLength( textLength );
     }
     if( prevState == HEX ) {
         for( uint i=0; i<theList->count( ); i++ ) {
-            theList->at( i )->setText( QString::QString( ).setNum( strtol( theList->at( i )->text( ), NULL, 16 ), 2 ) );
+            theList->at( i )->setText( QString( ).setNum( strtol( theList->at( i )->text( ).toStdString().c_str(), NULL, 16 ), 2 ) );
         }
     } else if( prevState == DEC ) {
         for( uint i=0; i<theList->count( ); i++ ) {
-            theList->at( i )->setText( QString::QString( ).setNum( theList->at( i )->text( ).toInt( ), 2 ) );
+            theList->at( i )->setText( QString( ).setNum( theList->at( i )->text( ).toInt( ), 2 ) );
         }
     }
 }
 
-void CANFestivalGui::toDec( QList<QLineEdit>* theList, int prevState, int textLength )
+void CANFestivalGui::toDec( QList<QLineEdit*>* theList, int prevState, int textLength )
 {
     if( prevState == BIN ) {
         for( uint i=0; i<theList->count( ); i++ ) {
-            theList->at( i )->setText( QString::QString( ).setNum( strtol( theList->at( i )->text( ), NULL, 2 ) ) );
+            theList->at( i )->setText( QString( ).setNum( strtol( theList->at( i )->text( ).toStdString().c_str(), NULL, 2 ) ) );
             theList->at( i )->setMaxLength( textLength );
         }
     } else if( prevState == HEX ) {
         for( uint i=0; i<theList->count( ); i++ ) {
-            theList->at( i )->setText( QString::QString( ).setNum( strtol( theList->at( i )->text( ), NULL, 16 ) ) );
+            theList->at( i )->setText( QString( ).setNum( strtol( theList->at( i )->text( ).toStdString().c_str(), NULL, 16 ) ) );
             theList->at( i )->setMaxLength( textLength );
         }
     }

@@ -31,13 +31,13 @@ int main(int argc, char *argv[])
   // set the location where your .qm files are in load() below as the last parameter instead of "."
   // for development, use "/" to use the english original as
   // .qm files are stored in the base project directory.
-  tor.load( QString("CANFestivalGui.") + QTextCodec::locale(), "." );
+  //tor.load( QString("CANFestivalGui.") + QTextCodec::locale(), "." );
   a.installTranslator( &tor );
   /* uncomment the following line, if you want a Windows 95 look*/
   // a.setStyle(WindowsStyle);
-    
+
   CANFestivalGui *canFestivalGui = new CANFestivalGui();
-  a.setMainWidget( canFestivalGui );
+  //a.setMainWidget( canFestivalGui );
 
   canFestivalGui->show();
 

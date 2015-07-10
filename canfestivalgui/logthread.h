@@ -19,7 +19,7 @@
 #define LOGTHREAD_H
 
 #include <qthread.h>
-#include <qtextview.h>
+#include <QSemaphore>
 
 #include "canfestivalgui.h"
 
@@ -33,15 +33,15 @@
 class CANFestivalGui;
 class LogThread : public QThread  {
 private:
-    QTextView*      mCanReceiveLog;
+    Q3TextView*      mCanReceiveLog;
     CANFestivalGui* mGui;
     QSemaphore*     mpReadLogSem;    // semaphore for accessing the log-textfield
     int             mCanMsgNr;
     bool            mMach;
     bool            mRun;
-public: 
-	LogThread( QTextView*, CANFestivalGui* );
-	~LogThread( );
+public:
+    LogThread( Q3TextView*, CANFestivalGui* );
+    ~LogThread( );
 
     virtual void run( );
     void getSem( ) { mpReadLogSem++; }
