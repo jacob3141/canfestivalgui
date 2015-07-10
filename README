@@ -1,0 +1,25 @@
+CANFestival GUI
+---------------
+
+This is a GUI for CANFestival located here:
+http://freshmeat.net/redir/canfestival/15271/url_homepage
+It uses (almost) all functions of CanOpenMatic (a canopen protocol stack)
+and is very useful helping understand the canopen protocol.
+
+who is able to use it:
+----------------------
+- all person who are able to use CANFestival
+- all other person: there's a simulation only mode, where no "real" can
+  message are sent, but the can-messages are shown in a log area. so
+  you can learn how the canopen protocol works!
+
+known BUGS:
+-----------
+- The program isn't tested very well, so i suppose you'll find some bugs...
+- The program may crash, if too much messages are received in a too short time
+  if this happens: search the sourcecode for the string BUG and comment the lines
+  there... these lines are for comfort reasons only: with this line the log window
+  for received can-messages do scroll automatially, so you can always see the
+  last received message. without this code-lines, you'll have to scroll down
+  the windows by your mouse :-(
+  if you know a working solution, please contact me: zulli@gmx.net

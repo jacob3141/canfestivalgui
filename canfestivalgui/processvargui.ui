@@ -1,0 +1,233 @@
+<!DOCTYPE UI><UI>
+<class>ProcessVarGui</class>
+<widget>
+    <class>QDialog</class>
+    <property stdset="1">
+        <name>name</name>
+        <cstring>ProcessVarGuiForm</cstring>
+    </property>
+    <property stdset="1">
+        <name>geometry</name>
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>878</width>
+            <height>454</height>
+        </rect>
+    </property>
+    <property stdset="1">
+        <name>caption</name>
+        <string>View Process Variables</string>
+    </property>
+    <widget>
+        <class>QLabel</class>
+        <property stdset="1">
+            <name>name</name>
+            <cstring>TextLabel4</cstring>
+        </property>
+        <property stdset="1">
+            <name>geometry</name>
+            <rect>
+                <x>20</x>
+                <y>20</y>
+                <width>90</width>
+                <height>17</height>
+            </rect>
+        </property>
+        <property stdset="1">
+            <name>text</name>
+            <string>CAN Identifier</string>
+        </property>
+    </widget>
+    <widget>
+        <class>QSpinBox</class>
+        <property stdset="1">
+            <name>name</name>
+            <cstring>canopenPVarViewIdentifier</cstring>
+        </property>
+        <property stdset="1">
+            <name>geometry</name>
+            <rect>
+                <x>130</x>
+                <y>15</y>
+                <width>58</width>
+                <height>25</height>
+            </rect>
+        </property>
+    </widget>
+    <widget>
+        <class>QGroupBox</class>
+        <property stdset="1">
+            <name>name</name>
+            <cstring>GroupBox6</cstring>
+        </property>
+        <property stdset="1">
+            <name>geometry</name>
+            <rect>
+                <x>10</x>
+                <y>60</y>
+                <width>870</width>
+                <height>380</height>
+            </rect>
+        </property>
+        <property stdset="1">
+            <name>sizePolicy</name>
+            <sizepolicy>
+                <hsizetype>5</hsizetype>
+                <vsizetype>5</vsizetype>
+            </sizepolicy>
+        </property>
+        <property stdset="1">
+            <name>title</name>
+            <string>View Process Data</string>
+        </property>
+        <widget>
+            <class>QTable</class>
+            <property stdset="1">
+                <name>name</name>
+                <cstring>txTable</cstring>
+            </property>
+            <property stdset="1">
+                <name>geometry</name>
+                <rect>
+                    <x>10</x>
+                    <y>250</y>
+                    <width>850</width>
+                    <height>120</height>
+                </rect>
+            </property>
+            <property stdset="1">
+                <name>resizePolicy</name>
+                <enum>Default</enum>
+            </property>
+            <property stdset="1">
+                <name>numRows</name>
+                <number>4</number>
+            </property>
+            <property stdset="1">
+                <name>numCols</name>
+                <number>10</number>
+            </property>
+            <property stdset="1">
+                <name>showGrid</name>
+                <bool>true</bool>
+            </property>
+        </widget>
+        <widget>
+            <class>QTable</class>
+            <property stdset="1">
+                <name>name</name>
+                <cstring>rxTable</cstring>
+            </property>
+            <property stdset="1">
+                <name>geometry</name>
+                <rect>
+                    <x>10</x>
+                    <y>70</y>
+                    <width>850</width>
+                    <height>120</height>
+                </rect>
+            </property>
+            <property stdset="1">
+                <name>autoMask</name>
+                <bool>false</bool>
+            </property>
+            <property stdset="1">
+                <name>frameShadow</name>
+                <enum>Sunken</enum>
+            </property>
+            <property stdset="1">
+                <name>resizePolicy</name>
+                <enum>AutoOneFit</enum>
+            </property>
+            <property stdset="1">
+                <name>numRows</name>
+                <number>4</number>
+            </property>
+            <property stdset="1">
+                <name>numCols</name>
+                <number>10</number>
+            </property>
+            <property stdset="1">
+                <name>showGrid</name>
+                <bool>true</bool>
+            </property>
+        </widget>
+        <widget>
+            <class>QLabel</class>
+            <property stdset="1">
+                <name>name</name>
+                <cstring>TextLabel5</cstring>
+            </property>
+            <property stdset="1">
+                <name>geometry</name>
+                <rect>
+                    <x>10</x>
+                    <y>40</y>
+                    <width>103</width>
+                    <height>15</height>
+                </rect>
+            </property>
+            <property stdset="1">
+                <name>text</name>
+                <string>Rx (Receive) [dec]</string>
+            </property>
+        </widget>
+        <widget>
+            <class>QLabel</class>
+            <property stdset="1">
+                <name>name</name>
+                <cstring>TextLabel6</cstring>
+            </property>
+            <property stdset="1">
+                <name>geometry</name>
+                <rect>
+                    <x>10</x>
+                    <y>220</y>
+                    <width>102</width>
+                    <height>15</height>
+                </rect>
+            </property>
+            <property stdset="1">
+                <name>text</name>
+                <string>Tx (Transmit) [dec]</string>
+            </property>
+        </widget>
+    </widget>
+    <widget>
+        <class>QPushButton</class>
+        <property stdset="1">
+            <name>name</name>
+            <cstring>PushButton1</cstring>
+        </property>
+        <property stdset="1">
+            <name>geometry</name>
+            <rect>
+                <x>230</x>
+                <y>20</y>
+                <width>131</width>
+                <height>31</height>
+            </rect>
+        </property>
+        <property stdset="1">
+            <name>text</name>
+            <string>&amp;Update</string>
+        </property>
+    </widget>
+</widget>
+<connections>
+    <connection>
+        <sender>canopenPVarViewIdentifier</sender>
+        <signal>valueChanged(int)</signal>
+        <receiver>ProcessVarGuiForm</receiver>
+        <slot>canopenIdChanged( )</slot>
+    </connection>
+    <connection>
+        <sender>PushButton1</sender>
+        <signal>clicked()</signal>
+        <receiver>ProcessVarGuiForm</receiver>
+        <slot>canopenIdChanged( )</slot>
+    </connection>
+    <slot access="public">canopenIdChanged( )</slot>
+</connections>
+</UI>

@@ -1,0 +1,158 @@
+processvargui.o: processvargui.cpp processvargui.h \
+  /usr/lib/qt-2.3.1/include/qvariant.h \
+  /usr/lib/qt-2.3.1/include/qstring.h \
+  /usr/lib/qt-2.3.1/include/qcstring.h /usr/lib/qt-2.3.1/include/qarray.h \
+  /usr/lib/qt-2.3.1/include/qgarray.h /usr/lib/qt-2.3.1/include/qshared.h \
+  /usr/lib/qt-2.3.1/include/qglobal.h \
+  /usr/lib/qt-2.3.1/include/qfeatures.h \
+  /usr/lib/qt-2.3.1/include/qconfig.h /usr/include/string.h \
+  /usr/include/features.h /usr/include/sys/cdefs.h \
+  /usr/include/gnu/stubs.h \
+  /usr/lib/gcc-lib/i386-redhat-linux/2.96/include/stddef.h \
+  /usr/lib/qt-2.3.1/include/qvaluelist.h \
+  /usr/lib/qt-2.3.1/include/qdatastream.h \
+  /usr/lib/qt-2.3.1/include/qiodevice.h \
+  /usr/lib/qt-2.3.1/include/qstringlist.h \
+  /usr/lib/qt-2.3.1/include/qregexp.h /usr/lib/qt-2.3.1/include/qmap.h \
+  /usr/lib/qt-2.3.1/include/qdialog.h /usr/lib/qt-2.3.1/include/qwidget.h \
+  /usr/lib/qt-2.3.1/include/qwindowdefs.h \
+  /usr/lib/qt-2.3.1/include/qobjectdefs.h \
+  /usr/lib/qt-2.3.1/include/qnamespace.h \
+  /usr/lib/gcc-lib/i386-redhat-linux/2.96/include/limits.h \
+  /usr/lib/gcc-lib/i386-redhat-linux/2.96/include/syslimits.h \
+  /usr/include/limits.h /usr/include/bits/posix1_lim.h \
+  /usr/include/bits/local_lim.h /usr/include/linux/limits.h \
+  /usr/include/bits/posix2_lim.h /usr/lib/qt-2.3.1/include/qobject.h \
+  /usr/lib/qt-2.3.1/include/qevent.h /usr/lib/qt-2.3.1/include/qregion.h \
+  /usr/lib/qt-2.3.1/include/qrect.h /usr/lib/qt-2.3.1/include/qsize.h \
+  /usr/lib/qt-2.3.1/include/qpoint.h /usr/lib/qt-2.3.1/include/qmime.h \
+  /usr/lib/qt-2.3.1/include/qpaintdevice.h \
+  /usr/lib/qt-2.3.1/include/qpalette.h /usr/lib/qt-2.3.1/include/qcolor.h \
+  /usr/lib/qt-2.3.1/include/qbrush.h /usr/lib/qt-2.3.1/include/qcursor.h \
+  /usr/lib/qt-2.3.1/include/qfont.h \
+  /usr/lib/qt-2.3.1/include/qfontmetrics.h \
+  /usr/lib/qt-2.3.1/include/qfontinfo.h \
+  /usr/lib/qt-2.3.1/include/qstyle.h \
+  /usr/lib/qt-2.3.1/include/qsizepolicy.h \
+  /usr/lib/qt-2.3.1/include/qgroupbox.h \
+  /usr/lib/qt-2.3.1/include/qframe.h /usr/lib/qt-2.3.1/include/qlabel.h \
+  /usr/lib/qt-2.3.1/include/qpushbutton.h \
+  /usr/lib/qt-2.3.1/include/qbutton.h \
+  /usr/lib/qt-2.3.1/include/qiconset.h \
+  /usr/lib/qt-2.3.1/include/qpixmap.h \
+  /usr/lib/qt-2.3.1/include/qspinbox.h \
+  /usr/lib/qt-2.3.1/include/qrangecontrol.h \
+  /usr/lib/qt-2.3.1/include/qtable.h \
+  /usr/lib/qt-2.3.1/include/qscrollview.h \
+  /usr/lib/qt-2.3.1/include/qscrollbar.h \
+  /usr/lib/qt-2.3.1/include/qdrawutil.h \
+  /usr/lib/qt-2.3.1/include/qpainter.h /usr/lib/qt-2.3.1/include/qpen.h \
+  /usr/lib/qt-2.3.1/include/qpointarray.h \
+  /usr/lib/qt-2.3.1/include/qwmatrix.h \
+  /usr/lib/qt-2.3.1/include/qvector.h \
+  /usr/lib/qt-2.3.1/include/qgvector.h \
+  /usr/lib/qt-2.3.1/include/qcollection.h \
+  /usr/lib/qt-2.3.1/include/qheader.h /usr/lib/qt-2.3.1/include/qlist.h \
+  /usr/lib/qt-2.3.1/include/qglist.h \
+  /usr/lib/qt-2.3.1/include/qguardedptr.h \
+  /usr/lib/qt-2.3.1/include/qlayout.h \
+  /usr/lib/qt-2.3.1/include/qabstractlayout.h \
+  /usr/lib/qt-2.3.1/include/qtooltip.h /usr/lib/qt-2.3.1/include/qtimer.h \
+  /usr/lib/qt-2.3.1/include/qwhatsthis.h processvargui.moc \
+  /usr/lib/qt-2.3.1/include/qmetaobject.h \
+  /usr/lib/qt-2.3.1/include/qconnection.h \
+  /usr/lib/qt-2.3.1/include/qstrlist.h \
+  /usr/lib/qt-2.3.1/include/qapplication.h \
+  /usr/lib/qt-2.3.1/include/qasciidict.h \
+  /usr/lib/qt-2.3.1/include/qgdict.h \
+  /usr/lib/qt-2.3.1/include/qtranslator.h \
+  /usr/lib/qt-2.3.1/include/qintdict.h
+processvargui.cpp :
+processvargui.h :
+/usr/lib/qt-2.3.1/include/qvariant.h :
+/usr/lib/qt-2.3.1/include/qstring.h :
+/usr/lib/qt-2.3.1/include/qcstring.h :
+/usr/lib/qt-2.3.1/include/qarray.h :
+/usr/lib/qt-2.3.1/include/qgarray.h :
+/usr/lib/qt-2.3.1/include/qshared.h :
+/usr/lib/qt-2.3.1/include/qglobal.h :
+/usr/lib/qt-2.3.1/include/qfeatures.h :
+/usr/lib/qt-2.3.1/include/qconfig.h :
+/usr/include/string.h :
+/usr/include/features.h :
+/usr/include/sys/cdefs.h :
+/usr/include/gnu/stubs.h :
+/usr/lib/gcc-lib/i386-redhat-linux/2.96/include/stddef.h :
+/usr/lib/qt-2.3.1/include/qvaluelist.h :
+/usr/lib/qt-2.3.1/include/qdatastream.h :
+/usr/lib/qt-2.3.1/include/qiodevice.h :
+/usr/lib/qt-2.3.1/include/qstringlist.h :
+/usr/lib/qt-2.3.1/include/qregexp.h :
+/usr/lib/qt-2.3.1/include/qmap.h :
+/usr/lib/qt-2.3.1/include/qdialog.h :
+/usr/lib/qt-2.3.1/include/qwidget.h :
+/usr/lib/qt-2.3.1/include/qwindowdefs.h :
+/usr/lib/qt-2.3.1/include/qobjectdefs.h :
+/usr/lib/qt-2.3.1/include/qnamespace.h :
+/usr/lib/gcc-lib/i386-redhat-linux/2.96/include/limits.h :
+/usr/lib/gcc-lib/i386-redhat-linux/2.96/include/syslimits.h :
+/usr/include/limits.h :
+/usr/include/bits/posix1_lim.h :
+/usr/include/bits/local_lim.h :
+/usr/include/linux/limits.h :
+/usr/include/bits/posix2_lim.h :
+/usr/lib/qt-2.3.1/include/qobject.h :
+/usr/lib/qt-2.3.1/include/qevent.h :
+/usr/lib/qt-2.3.1/include/qregion.h :
+/usr/lib/qt-2.3.1/include/qrect.h :
+/usr/lib/qt-2.3.1/include/qsize.h :
+/usr/lib/qt-2.3.1/include/qpoint.h :
+/usr/lib/qt-2.3.1/include/qmime.h :
+/usr/lib/qt-2.3.1/include/qpaintdevice.h :
+/usr/lib/qt-2.3.1/include/qpalette.h :
+/usr/lib/qt-2.3.1/include/qcolor.h :
+/usr/lib/qt-2.3.1/include/qbrush.h :
+/usr/lib/qt-2.3.1/include/qcursor.h :
+/usr/lib/qt-2.3.1/include/qfont.h :
+/usr/lib/qt-2.3.1/include/qfontmetrics.h :
+/usr/lib/qt-2.3.1/include/qfontinfo.h :
+/usr/lib/qt-2.3.1/include/qstyle.h :
+/usr/lib/qt-2.3.1/include/qsizepolicy.h :
+/usr/lib/qt-2.3.1/include/qgroupbox.h :
+/usr/lib/qt-2.3.1/include/qframe.h :
+/usr/lib/qt-2.3.1/include/qlabel.h :
+/usr/lib/qt-2.3.1/include/qpushbutton.h :
+/usr/lib/qt-2.3.1/include/qbutton.h :
+/usr/lib/qt-2.3.1/include/qiconset.h :
+/usr/lib/qt-2.3.1/include/qpixmap.h :
+/usr/lib/qt-2.3.1/include/qspinbox.h :
+/usr/lib/qt-2.3.1/include/qrangecontrol.h :
+/usr/lib/qt-2.3.1/include/qtable.h :
+/usr/lib/qt-2.3.1/include/qscrollview.h :
+/usr/lib/qt-2.3.1/include/qscrollbar.h :
+/usr/lib/qt-2.3.1/include/qdrawutil.h :
+/usr/lib/qt-2.3.1/include/qpainter.h :
+/usr/lib/qt-2.3.1/include/qpen.h :
+/usr/lib/qt-2.3.1/include/qpointarray.h :
+/usr/lib/qt-2.3.1/include/qwmatrix.h :
+/usr/lib/qt-2.3.1/include/qvector.h :
+/usr/lib/qt-2.3.1/include/qgvector.h :
+/usr/lib/qt-2.3.1/include/qcollection.h :
+/usr/lib/qt-2.3.1/include/qheader.h :
+/usr/lib/qt-2.3.1/include/qlist.h :
+/usr/lib/qt-2.3.1/include/qglist.h :
+/usr/lib/qt-2.3.1/include/qguardedptr.h :
+/usr/lib/qt-2.3.1/include/qlayout.h :
+/usr/lib/qt-2.3.1/include/qabstractlayout.h :
+/usr/lib/qt-2.3.1/include/qtooltip.h :
+/usr/lib/qt-2.3.1/include/qtimer.h :
+/usr/lib/qt-2.3.1/include/qwhatsthis.h :
+processvargui.moc :
+/usr/lib/qt-2.3.1/include/qmetaobject.h :
+/usr/lib/qt-2.3.1/include/qconnection.h :
+/usr/lib/qt-2.3.1/include/qstrlist.h :
+/usr/lib/qt-2.3.1/include/qapplication.h :
+/usr/lib/qt-2.3.1/include/qasciidict.h :
+/usr/lib/qt-2.3.1/include/qgdict.h :
+/usr/lib/qt-2.3.1/include/qtranslator.h :
+/usr/lib/qt-2.3.1/include/qintdict.h :
