@@ -13,6 +13,10 @@
   <property name="windowTitle">
    <string>CANFestival Gui</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="resources.qrc">
+    <normaloff>:/images/canfestival.svg</normaloff>:/images/canfestival.svg</iconset>
+  </property>
   <layout class="QVBoxLayout" name="verticalLayout_9">
    <item>
     <widget class="QGroupBox" name="groupBox">
@@ -1807,7 +1811,9 @@
    <header>q3textview.h</header>
   </customwidget>
  </customwidgets>
- <resources/>
+ <resources>
+  <include location="resources.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>clearCANopenLogButton</sender>

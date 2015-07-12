@@ -50,3 +50,6 @@ SOURCES += \
 OTHER_FILES = \
   LICENSE \
   README.md
+
+RESOURCES += \
+    resources.qrc

@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/canfestival.svg</file>
+    </qresource>
+</RCC>
