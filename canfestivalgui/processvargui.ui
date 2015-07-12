@@ -1,175 +1,157 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ui version="4.0" stdsetdef="1">
-  <author></author>
-  <comment></comment>
-  <exportmacro></exportmacro>
-  <class>ProcessVarGui</class>
-  <widget class="QDialog" name="ProcessVarGuiForm">
-    <property name="geometry">
-      <rect>
-        <x>0</x>
-        <y>0</y>
-        <width>878</width>
-        <height>454</height>
-      </rect>
-    </property>
-    <property name="windowTitle">
-      <string>View Process Variables</string>
-    </property>
-    <widget class="QLabel" name="TextLabel4">
-      <property name="geometry">
-        <rect>
-          <x>20</x>
-          <y>20</y>
-          <width>90</width>
-          <height>17</height>
-        </rect>
-      </property>
-      <property name="text">
+<ui version="4.0">
+ <class>ProcessVarGui</class>
+ <widget class="QDialog" name="ProcessVarGui">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>878</width>
+    <height>454</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>View Process Variables</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QLabel" name="TextLabel4">
+       <property name="text">
         <string>CAN Identifier</string>
-      </property>
-      <property name="wordWrap">
+       </property>
+       <property name="wordWrap">
         <bool>false</bool>
-      </property>
-    </widget>
-    <widget class="QSpinBox" name="canopenPVarViewIdentifier">
-      <property name="geometry">
-        <rect>
-          <x>130</x>
-          <y>15</y>
-          <width>58</width>
-          <height>25</height>
-        </rect>
-      </property>
-    </widget>
-    <widget class="Q3GroupBox" name="GroupBox6">
-      <property name="geometry">
-        <rect>
-          <x>10</x>
-          <y>60</y>
-          <width>870</width>
-          <height>380</height>
-        </rect>
-      </property>
-      <property name="sizePolicy">
-        <sizepolicy>
-          <hsizetype>5</hsizetype>
-          <vsizetype>5</vsizetype>
-        </sizepolicy>
-      </property>
-      <property name="title">
-        <string>View Process Data</string>
-      </property>
-      <widget class="Q3Table" name="txTable">
-        <property name="geometry">
-          <rect>
-            <x>10</x>
-            <y>250</y>
-            <width>850</width>
-            <height>120</height>
-          </rect>
-        </property>
-        <property name="resizePolicy">
-          <enum>Default</enum>
-        </property>
-        <property name="numRows">
-          <number>4</number>
-        </property>
-        <property name="numCols">
-          <number>10</number>
-        </property>
-        <property name="showGrid">
-          <bool>true</bool>
-        </property>
+       </property>
       </widget>
-      <widget class="Q3Table" name="rxTable">
-        <property name="geometry">
-          <rect>
-            <x>10</x>
-            <y>70</y>
-            <width>850</width>
-            <height>120</height>
-          </rect>
-        </property>
-        <property name="autoMask">
-          <bool>false</bool>
-        </property>
-        <property name="frameShadow">
-          <enum>Sunken</enum>
-        </property>
-        <property name="resizePolicy">
-          <enum>AutoOneFit</enum>
-        </property>
-        <property name="numRows">
-          <number>4</number>
-        </property>
-        <property name="numCols">
-          <number>10</number>
-        </property>
-        <property name="showGrid">
-          <bool>true</bool>
-        </property>
-      </widget>
-      <widget class="QLabel" name="TextLabel5">
-        <property name="geometry">
-          <rect>
-            <x>10</x>
-            <y>40</y>
-            <width>103</width>
-            <height>15</height>
-          </rect>
-        </property>
-        <property name="text">
-          <string>Rx (Receive) [dec]</string>
-        </property>
-        <property name="wordWrap">
-          <bool>false</bool>
-        </property>
-      </widget>
-      <widget class="QLabel" name="TextLabel6">
-        <property name="geometry">
-          <rect>
-            <x>10</x>
-            <y>220</y>
-            <width>102</width>
-            <height>15</height>
-          </rect>
-        </property>
-        <property name="text">
-          <string>Tx (Transmit) [dec]</string>
-        </property>
-        <property name="wordWrap">
-          <bool>false</bool>
-        </property>
-      </widget>
-    </widget>
-    <widget class="QPushButton" name="PushButton1">
-      <property name="geometry">
-        <rect>
-          <x>230</x>
-          <y>20</y>
-          <width>131</width>
-          <height>31</height>
-        </rect>
-      </property>
-      <property name="text">
+     </item>
+     <item>
+      <widget class="QSpinBox" name="canopenPVarViewIdentifier"/>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="PushButton1">
+       <property name="text">
         <string>&amp;Update</string>
-      </property>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QLabel" name="TextLabel5">
+     <property name="text">
+      <string>Rx (Receive) [dec]</string>
+     </property>
+     <property name="wordWrap">
+      <bool>false</bool>
+     </property>
     </widget>
-  </widget>
-  <pixmapfunction>qPixmapFromMimeSource</pixmapfunction>
-  <connections>
-    <connection>
-      <sender>canopenPVarViewIdentifier</sender>
-      <signal>valueChanged(int)</signal>
-      <receiver>ProcessVarGuiForm</receiver>
-      <slot>canopenIdChanged()</slot>
-    </connection>
-    <connection>
-      <sender>PushButton1</sender>
-      <signal>clicked()</signal>
-      <receiver>ProcessVarGuiForm</receiver>
-      <slot>canopenIdChanged()</slot>
-    </connection>
-  </connections>
+   </item>
+   <item>
+    <widget class="Q3Table" name="rxTable" native="true">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="numRows" stdset="0">
+      <number>4</number>
+     </property>
+     <property name="numCols" stdset="0">
+      <number>10</number>
+     </property>
+     <property name="showGrid" stdset="0">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="TextLabel6">
+     <property name="text">
+      <string>Tx (Transmit) [dec]</string>
+     </property>
+     <property name="wordWrap">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="Q3Table" name="txTable" native="true">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="numRows" stdset="0">
+      <number>4</number>
+     </property>
+     <property name="numCols" stdset="0">
+      <number>10</number>
+     </property>
+     <property name="showGrid" stdset="0">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <pixmapfunction>qPixmapFromMimeSource</pixmapfunction>
+ <customwidgets>
+  <customwidget>
+   <class>Q3Table</class>
+   <extends>QWidget</extends>
+   <header>q3table.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>canopenPVarViewIdentifier</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>ProcessVarGui</receiver>
+   <slot>canopenIdChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>20</x>
+     <y>20</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>20</x>
+     <y>20</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>PushButton1</sender>
+   <signal>clicked()</signal>
+   <receiver>ProcessVarGui</receiver>
+   <slot>canopenIdChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>20</x>
+     <y>20</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>20</x>
+     <y>20</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

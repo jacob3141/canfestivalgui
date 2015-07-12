@@ -258,7 +258,7 @@ CANFestivalGui::CANFestivalGui()
     initModule( );
 
     // creates the gui which is able to show all (at the moment only the transmit values) process vars
-    mPVarGui = new PVarGui( );
+    mPVarGui = new ProcessVarGui( );
 }
 
 

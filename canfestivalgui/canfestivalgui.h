@@ -26,7 +26,7 @@
 #include <QLineEdit>
 
 #include "logthread.h"
-#include "pvargui.h"
+#include "processvargui.h"
 
 #define BUSNAME_SIZE 40
 #define CMD_SIZE 100
@@ -73,7 +73,7 @@ private:
 
     LogThread* mLogThread;
 
-    PVarGui*    mPVarGui;
+    ProcessVarGui*    mPVarGui;
 
     // private Memberfunctions...
     int getLength(QList<QLineEdit *> & );

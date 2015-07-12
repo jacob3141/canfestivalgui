@@ -31,7 +31,6 @@ HEADERS += \
   logthread.h \
   maingui.h \
   processvargui.h \
-  pvargui.h \
   include/ArbraCan.h \
   include/Can.h \
   include/CanOpenMatic.h
@@ -46,8 +45,7 @@ SOURCES += \
   logthread.cpp \
   main.cpp \
   maingui.cpp \
-  processvargui.cpp \
-  pvargui.cpp
+  processvargui.cpp
 
 OTHER_FILES = \
   LICENSE \
