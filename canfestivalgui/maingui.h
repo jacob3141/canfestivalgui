@@ -21,11 +21,27 @@
 #pragma once
 
 #include <QWidget>
+#include <QList>
+#include <QLineEdit>
+
+#define BUSNAME_SIZE 40
+#define CMD_SIZE 100
+#define STATE_BADCOUNT -3
+#define STATE_FAULT -2
+#define STATE_FINISHED -1
+#define STATE_OK 0
+#define STATE_STOP 1
+#define STATE_PERIODIC 2
+#define STATE_ASYNC 3
+#define STATE_Rx 4
+#define STATE_Tx 5
 
 namespace Ui {
     class MainGui;
 }
 
+class LogThread;
+class ProcessVarGui;
 class MainGui : public QWidget
 {
     Q_OBJECT
@@ -35,41 +51,83 @@ public:
     ~MainGui();
 
 public slots:
-    virtual void canBINClicked( );
-    virtual void canDECClicked( );
-    virtual void canHEXClicked( );
-    virtual void canopenDictBinClicked( );
-    virtual void canopenDictDecClicked( );
-    virtual void canopenDictHexClicked( );
-    virtual void canopenDictRead( );
-    virtual void canopenDictWrite( );
-    virtual void canopenPDOBinClicked( );
-    virtual void canopenPDODecClicked( );
-    virtual void canopenPDOHexClicked( );
-    virtual void canopenPVarBinClicked( );
-    virtual void canopenPVarDecClicked( );
-    virtual void canopenPVarDownload( );
-    virtual void canopenPVarHexClicked( );
-    virtual void canopenPVarShow( );
-    virtual void canopenPVarWrite( );
-    virtual void canopenSDOBinClicked( );
-    virtual void canopenSDODecClicked( );
-    virtual void canopenSDOHexClicked( );
-    virtual void clearCANSentLog( );
-    virtual void clearCanReceiveLog( );
-    virtual void initModule( );
-    virtual void portChanged( );
-    virtual void readCan( );
-    virtual void restartNode( );
-    virtual void sendCan( );
-    virtual void sendNMT( );
-    virtual void sendPDO( );
-    virtual void sendSDO( );
-    virtual void sendSync( );
-    virtual void simulationNo( );
-    virtual void simulationYes( );
-    virtual void viewTransferTable( );
+    void canBINClicked( );
+    void canDECClicked( );
+    void canHEXClicked( );
+    void canopenDictBinClicked( );
+    void canopenDictDecClicked( );
+    void canopenDictHexClicked( );
+    void canopenDictRead( );
+    void canopenDictWrite( );
+    void canopenPDOBinClicked( );
+    void canopenPDODecClicked( );
+    void canopenPDOHexClicked( );
+    void canopenPVarBinClicked( );
+    void canopenPVarDecClicked( );
+    void canopenPVarDownload( );
+    void canopenPVarHexClicked( );
+    void canopenPVarShow( );
+    void canopenPVarWrite( );
+    void canopenSDOBinClicked( );
+    void canopenSDODecClicked( );
+    void canopenSDOHexClicked( );
+    void clearCANSentLog( );
+    void clearCanReceiveLog( );
+    void initModule( );
+    void portChanged( );
+    void sendCan( );
+    void sendNMT( );
+    void sendPDO( );
+    void sendSDO( );
+    void sendSync( );
+    void simulationNo( );
+    void simulationYes( );
 
+    void canopenPVarRead();
+    void readCan();
+    void restartNode();
+    void viewTransferTable();
 protected:
     Ui::MainGui *ui;
+
+private:
+    int getLength(QList<QLineEdit *> & );
+    int openDevice( );
+    int closeDevice( );
+
+    void toHex( QList<QLineEdit*>*, int, int );
+    void toBin(QList<QLineEdit *> *, int, int );
+    void toDec( QList<QLineEdit*>*, int, int );
+
+    int wait;
+    int fd;
+    char busname[40];
+
+    // while changing datatype (hex/bin/dec) we have to convert the values to the new format.
+    // therefore it is neccessary to know the previous data format
+    // 0->hex
+    // 1->bin
+    // 2->dec
+    char canopenPrevDataType;
+    char canPrevDataType;
+    char canopenDictPrevDataType;
+    char canopenPVarPrevDataType;
+
+    bool simulation;
+    bool driverLoaded;
+    enum {HEX, BIN, DEC};
+    QList<QLineEdit*> canopenPDODataList;
+    QList<QLineEdit*> canopenSDODataList;
+    QList<QLineEdit*> canopenDictDataList;
+    QList<QLineEdit*> canopenPVarDataList;
+    QList<QLineEdit*> canDataList;
+
+    LogThread* mLogThread;
+
+    ProcessVarGui*    mPVarGui;
 };
+
+
+extern void setWait(int);
+extern int getWait();
+

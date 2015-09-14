@@ -27,6 +27,8 @@ namespace Ui {
     class ProcessVarGui;
 }
 
+class LogThread;
+
 class ProcessVarGui :
     public QDialog {
     Q_OBJECT

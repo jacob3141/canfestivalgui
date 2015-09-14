@@ -19,37 +19,32 @@
 # *****************************************************************************/
 
 TEMPLATE = app
-TARGET = canfestivalgui
+TARGET = CANOpenFestival
 
-DEPENDPATH += . include
-INCLUDEPATH += . include
-
-QT += qt3support
+QT += gui widgets
 
 HEADERS += \
-  canfestivalgui.h \
-  logthread.h \
-  maingui.h \
-  processvargui.h \
-  include/ArbraCan.h \
-  include/Can.h \
-  include/CanOpenMatic.h
+    logthread.h \
+    maingui.h \
+    processvargui.h \
+    canopenmatic.h \
+    can.h \
+    arbracan.h
 
 FORMS += \
-  maingui.ui \
-  processvargui.ui
+    maingui.ui \
+    processvargui.ui
 
 SOURCES += \
-  canfestivalgui.cpp \
-  CanOpenMatic.c \
-  logthread.cpp \
-  main.cpp \
-  maingui.cpp \
-  processvargui.cpp
+    logthread.cpp \
+    main.cpp \
+    maingui.cpp \
+    processvargui.cpp \
+    canopenmatic.c
 
-OTHER_FILES = \
-  LICENSE \
-  README.md
+OTHER_FILES += \
+    LICENSE \
+    README.md
 
 RESOURCES += \
     resources.qrc

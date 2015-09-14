@@ -57,8 +57,9 @@
 #include <string.h>
 #endif
 
-#include "include/Can.h"
-#include "include/CanOpenMatic.h"
+#include "can.h"
+#include "canopenmatic.h"
+
 #include <stdio.h>
 #include <stdlib.h>
 

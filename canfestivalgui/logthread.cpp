@@ -25,7 +25,10 @@
 #include <qevent.h>
 #include <qpoint.h>
 
-LogThread::LogThread( Q3TextView* logView, CANFestivalGui* theGui )
+
+#include "maingui.h"
+
+LogThread::LogThread(QTextEdit *logView, MainGui* theGui )
 {
     mCanReceiveLog = logView;
     mGui = theGui;
@@ -62,7 +65,7 @@ void LogThread::run( )
             // it seams theres a BUG! with these 4 operations the content is shown correctly... BUT: if too much
             // inputs from the CANbus occurs, the program may crash :-(
             // to avoid this crash, comment the following 4 lines out and recompile the program.
-            mCanReceiveLog->center( 0, mCanReceiveLog->contentsHeight( ) );
+            //mCanReceiveLog->center( 0, mCanReceiveLog->contentsHeight( ) );
             mCanReceiveLog->viewport( )->repaint( );
             mCanReceiveLog->hide( );
             mCanReceiveLog->show( );

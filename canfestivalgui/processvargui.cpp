@@ -21,25 +21,13 @@
 #include "processvargui.h"
 #include "ui_processvargui.h"
 
-#include <qgroupbox.h>
-#include <qlabel.h>
-#include <qpushbutton.h>
-#include <qspinbox.h>
 
-#include <qlayout.h>
-#include <qvariant.h>
-#include <qtooltip.h>
-#include <qwhatsthis.h>
-#include <Qt3Support/Q3Table>
-
-#include <Qt3Support/Q3Table>
-#include <qspinbox.h>
 
 #include <iostream>
 
-#include "include/Can.h"
-#include "include/ArbraCan.h"
-#include "include/CanOpenMatic.h"
+#include "can.h"
+#include "arbracan.h"
+#include "canopenmatic.h"
 
 /*
  *  Constructs a ProcessVarGui which is a child of 'parent', with the
@@ -52,40 +40,32 @@ ProcessVarGui::ProcessVarGui(QWidget* parent)
     : QDialog(parent),
       _ui(new Ui::ProcessVarGui) {
     _ui->setupUi(this);
-    Q3Header *header;
 
-    header = _ui->rxTable->horizontalHeader( );
-    for( int i=0; i<2; i++ ) {
-        header->setLabel( 0, "State" );
-        header->setLabel( 1, "Count" );
-        header->setLabel( 2, "D0" );
-        header->setLabel( 3, "D1" );
-        header->setLabel( 4, "D2" );
-        header->setLabel( 5, "D3" );
-        header->setLabel( 6, "D4" );
-        header->setLabel( 7, "D5" );
-        header->setLabel( 8, "D6" );
-        header->setLabel( 9, "D7" );
+    QStringList horizontalRxHeaderLabels;
+    horizontalRxHeaderLabels
+        << "State"
+        << "Count"
+        << "D0"
+        << "D1"
+        << "D2"
+        << "D3"
+        << "D4"
+        << "D5"
+        << "D6"
+        << "D7";
 
-        header = _ui->txTable->horizontalHeader( );
-    }
+    _ui->rxTable->setColumnCount(horizontalRxHeaderLabels.count());
+    _ui->rxTable->setHorizontalHeaderLabels(horizontalRxHeaderLabels);
 
-    header = _ui->rxTable->verticalHeader( );
-    for( int i=0; i<2; i++ ) {
-        header->setLabel( 0, "PDO1" );
-        header->setLabel( 1, "PDO2" );
-        header->setLabel( 2, "PDO3" );
-        header->setLabel( 3, "PDO4" );
+    QStringList verticalRxHeaderLabels;
+    verticalRxHeaderLabels
+        << "PDO1"
+        << "PDO2"
+        << "PDO3"
+        << "PDO4";
 
-        header = _ui->txTable->verticalHeader( );
-    }
-
-    for( int i=0; i<_ui->rxTable->numCols( ); i++ ) {
-        _ui->rxTable->adjustColumn( i );
-    }
-    for( int i=0; i<_ui->txTable->numCols( ); i++ ) {
-        _ui->txTable->adjustColumn( i );
-    }
+    _ui->rxTable->setRowCount(verticalRxHeaderLabels.count());
+    _ui->rxTable->setVerticalHeaderLabels(verticalRxHeaderLabels);
 
     // signals and slots connections
     connect( _ui->canopenPVarViewIdentifier, SIGNAL( valueChanged(int) ), this, SLOT( canopenIdChanged( ) ) );
@@ -138,28 +118,32 @@ void ProcessVarGui::fillInData( int id )
     processVar = getProcessVar( 0, Tx, id );
 
     for( int col=2; col<10; col++ ) {
-        _ui->txTable->setText( row, col, QString( ).setNum( (unsigned char)processVar.data[col-2]  ) );
+        _ui->txTable->setItem(row, col,new QTableWidgetItem(
+            QString("%1").arg((unsigned char)processVar.data[col-2])
+         ));
     }
-    _ui->txTable->setText( row, 0, QString( statusTab[processVar.state&&0x0F].descr ) );
-    _ui->txTable->setText( row, 1, QString( ).setNum( processVar.count ) );
+    _ui->txTable->setItem(row, 0,new QTableWidgetItem(
+        QString("%1").arg(statusTab[processVar.state&&0x0F].descr)
+    ));
 
+    _ui->txTable->setItem(row, 1,new QTableWidgetItem(
+        QString("%1").arg(processVar.count)
+    ));
 
     // fill in all receive data
     processVar = getProcessVar( 0, Rx, id );
 
     for( int col=2; col<10; col++ ) {
-        _ui->rxTable->setText( row, col, QString( ).setNum( (unsigned char)processVar.data[col-2]  ) );
+        _ui->rxTable->setItem(row, col,new QTableWidgetItem(
+            QString("%1").arg((unsigned char)processVar.data[col-2])
+         ));
     }
-    _ui->rxTable->setText( row, 0, QString( statusTab[processVar.state&&0x0F].descr ) );
-    _ui->rxTable->setText( row, 1, QString( ).setNum( processVar.count ) );
+    _ui->rxTable->setItem(row, 0,new QTableWidgetItem(
+        QString("%1").arg(statusTab[processVar.state&&0x0F].descr)
+    ));
 
-
-    for( int i=0; i<_ui->rxTable->numCols( ); i++ ) {
-        _ui->rxTable->adjustColumn( i );
-    }
-    for( int i=0; i<_ui->txTable->numCols( ); i++ ) {
-        _ui->txTable->adjustColumn( i );
-    }
-
+    _ui->rxTable->setItem(row, 1,new QTableWidgetItem(
+        QString("%1").arg(processVar.count)
+    ));
 }
 

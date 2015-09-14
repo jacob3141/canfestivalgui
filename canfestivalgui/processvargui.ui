@@ -66,23 +66,7 @@
     </widget>
    </item>
    <item>
-    <widget class="Q3Table" name="rxTable" native="true">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="numRows" stdset="0">
-      <number>4</number>
-     </property>
-     <property name="numCols" stdset="0">
-      <number>10</number>
-     </property>
-     <property name="showGrid" stdset="0">
-      <bool>true</bool>
-     </property>
-    </widget>
+    <widget class="QTableWidget" name="rxTable"/>
    </item>
    <item>
     <widget class="QLabel" name="TextLabel6">
@@ -95,34 +79,11 @@
     </widget>
    </item>
    <item>
-    <widget class="Q3Table" name="txTable" native="true">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="numRows" stdset="0">
-      <number>4</number>
-     </property>
-     <property name="numCols" stdset="0">
-      <number>10</number>
-     </property>
-     <property name="showGrid" stdset="0">
-      <bool>true</bool>
-     </property>
-    </widget>
+    <widget class="QTableWidget" name="txTable"/>
    </item>
   </layout>
  </widget>
  <pixmapfunction>qPixmapFromMimeSource</pixmapfunction>
- <customwidgets>
-  <customwidget>
-   <class>Q3Table</class>
-   <extends>QWidget</extends>
-   <header>q3table.h</header>
-  </customwidget>
- </customwidgets>
  <resources>
   <include location="resources.qrc"/>
  </resources>

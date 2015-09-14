@@ -22,25 +22,23 @@
 
 #include <QThread>
 #include <QSemaphore>
-#include <Q3TextView>
+#include <QTextEdit>
 
-#include "canfestivalgui.h"
-
-#include "include/Can.h"
-#include "include/CanOpenMatic.h"
+#include "can.h"
+#include "canopenmatic.h"
 
 
-class CANFestivalGui;
+class MainGui;
 class LogThread : public QThread  {
 private:
-    Q3TextView*      mCanReceiveLog;
-    CANFestivalGui* mGui;
+    QTextEdit*      mCanReceiveLog;
+    MainGui* mGui;
     QSemaphore*     mpReadLogSem;    // semaphore for accessing the log-textfield
     int             mCanMsgNr;
     bool            mMach;
     bool            mRun;
 public:
-    LogThread( Q3TextView*, CANFestivalGui* );
+    LogThread( QTextEdit*, MainGui* );
     ~LogThread( );
 
     virtual void run( );

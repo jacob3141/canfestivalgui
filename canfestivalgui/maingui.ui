@@ -1743,17 +1743,7 @@
        </layout>
       </item>
       <item>
-       <widget class="Q3TextView" name="canLogView" native="true">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="dragAutoScroll" stdset="0">
-         <bool>true</bool>
-        </property>
-       </widget>
+       <widget class="QTextEdit" name="canLogView"/>
       </item>
      </layout>
     </widget>
@@ -1789,14 +1779,7 @@
        </layout>
       </item>
       <item>
-       <widget class="Q3TextView" name="canReceiveLog" native="true">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-       </widget>
+       <widget class="QTextEdit" name="canReceiveLog"/>
       </item>
      </layout>
     </widget>
@@ -1804,13 +1787,6 @@
   </layout>
  </widget>
  <pixmapfunction>qPixmapFromMimeSource</pixmapfunction>
- <customwidgets>
-  <customwidget>
-   <class>Q3TextView</class>
-   <extends>QWidget</extends>
-   <header>q3textview.h</header>
-  </customwidget>
- </customwidgets>
  <resources>
   <include location="resources.qrc"/>
  </resources>
